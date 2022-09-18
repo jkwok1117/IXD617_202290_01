@@ -1,0 +1,154 @@
+body {
+    margin: auto 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(29, 29, 29);
+    color: white;
+}
+p {
+    font-size: 17px;
+}
+a {
+    color: white;
+}  
+a:hover, a:active {
+    background-color: rgb(76, 146, 192);
+    color: white;
+  }
+.intro{
+    margin: 0 25em;
+    margin-bottom: 8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main.supporting {
+    margin: 0 25em;
+}
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 3em 0;
+    font-size: 18px;
+}
+.wrapper {
+    display: flex;
+    margin: 0 -7em;
+    justify-content: space-evenly;
+}
+.wrapper h3{
+    text-align: center;
+}
+[role="banner"] h1 {
+    padding: 20px 0;
+    font-size: 100px;
+    width: 20in;
+    text-align: center;
+    margin: 25px 50px 25px 50px;
+    border-radius: 1em;
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to right, rgb(255, 21, 21), rgb(34, 16, 112), rgb(218, 198, 23)) 1;
+}
+[role="banner"] h2 {
+    text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #a5da16 0%,
+    #a31034 29%,
+    #21d6c7 67%,
+    #ae00ff 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+      font-size: 40px;
+      text-align: center;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+    :root {
+        --delay: 0;
+        --duration: 2000ms;
+        --iterations: 1;
+      }
+      
+      .preamble h3,
+      .preamble h3::after {
+        animation-delay: var(--animation-delay, 2s);
+        animation-iteration-count: var(--iterations, 1);
+        animation-duration: var(--duration, 800ms);
+        animation-fill-mode: both;
+        animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+      }
+      
+      .preamble h3 {
+        --animation-delay: var(--delay, 0);
+        --animation-duration: var(--duration, 800ms);
+        --animation-iterations: var(--iterations, 1);
+        position: relative;
+        font-size: 35px;
+        text-align: center;
+        animation-name: clip-text;
+        color: #21d6c7;
+        white-space: nowrap;
+        cursor: default;
+        
+        
+      }
+      
+      @keyframes clip-text {
+        from {
+          clip-path: inset(0 100% 0 0);
+        }
+        to {
+          clip-path: inset(0 0 0 0);
+        }
+      }
+      
+      @keyframes text-revealer {
+        
+        0%, 50% {
+          transform-origin: 0 50%;
+        }
+        
+        60%, 100% {
+          transform-origin: 100% 50%;   
+        }
+      
+        60% {
+          transform: scaleX(1);
+        }
+        
+        100% {
+          transform: scaleX(0);
+        }
+      }
+
+      [role="main"] h3 {
+        text-align: center;
+        -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+        font-size: 40px;
+        position: relative;
+        color: #fff;
+        text-transform: uppercase;
+        animation: waviy 1s infinite;
+        animation-delay: calc(.1s * var(--i));
+      }
+      @keyframes waviy {
+        0%,30%,100% {
+          transform: translateY(0)
+        }
+        50% {
+          transform: translateY(-20px)
+        }
+      }
