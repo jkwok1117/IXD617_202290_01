@@ -4,16 +4,18 @@
 }
 
 :root {
-    --font-header:Helvetica, Arial, sans-serif;
-    --font-body:var(--font-header);
+    --font-header: 'Reem Kufi', sans-serif;
+    --font-body: 'Roboto', sans-serif;
 
     --header-height: 3rem;
 
-    --color-main-rgb: 101,186,183;
-    --color-main-hue: 178;
-    --color-main-light: hsl(var(--color-main-hue), 52%, 77%);
-    --color-main-medium: hsl(var(--color-main-hue), 38%, 56%);
-    --color-main-dark: hsl(var(--color-main-hue), 57%, 27%);
+    /* --color-main-rgb: 241,75,75; */
+    --color-primary-red: rgb(241,75,75);
+    --color-primary-blue: rgb(86,195,229);
+    --color-primary-yellow: rgb(255,244,96);
+    /* --color-main-light: hsl(var(--color-primary-hue), 52%, 77%);
+    --color-main-medium: hsl(var(--color-primary-hue), 38%, 56%);
+    --color-main-dark: hsl(var(--color-primary-hue), 57%, 27%); */
 }
 
 body {
@@ -22,9 +24,11 @@ body {
 }
 
 a {
-    color:var(--color-main-medium);
-    font-weight: bold;
+    color:var(--color-primary-red);
     text-decoration: none;
+}
+p {
+    margin: 0;
 }
 
 
