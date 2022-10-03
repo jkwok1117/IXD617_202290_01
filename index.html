@@ -72,9 +72,19 @@
     <!-- MAP PAGE -->
     <section data-role="page" id="map-page">
         <div data-role="main">
-            MAP!
-            <div>
+            <div class="map"></div>
+            <div class="floater top left">
+                <a href="#" class="btn-circle" data-activate="#map-add-modal">&plus;</a>
+            </div>
+            <!-- <div>
                 <a href="#add-shape-page">Add Shape</a>
+            </div> -->
+            <div id="map-add-modal" class="modal">
+                <div class="modal-back" data-deactivate="#map-add-modal"></div>
+                <div class="modal-drawer left">
+                    <div class="modal-head">Head</div>
+                    <div class="modal-body">Body</div>
+                </div>
             </div>
         </div>
         <footer data-role="footer">
@@ -84,6 +94,7 @@
                 <li><a href="#user-profile-page">Profile</a></li>
             </ul>
         </footer>
+        
     </section>
 
 
@@ -91,21 +102,23 @@
     <section data-role="page" id="list-page">
         <header data-role="header">
             <h1>Shape List</h1>
-            <ul>
-                <li class="flex-stretch"></li>
-            </ul>
         </header>
         <div data-role="main">
-            <div class="shapelist-item"><a href="#shape-profile-page">Shape 1</a></div>
-            <div class="shapelist-item"><a href="#shape-profile-page">Shape 2</a></div>
-            <div class="shapelist-item"><a href="#shape-profile-page">Shape 3</a></div>
-            <div class="shapelist-item"><a href="#shape-profile-page">Shape 4</a></div>
-            <div class="shapelist-item"><a href="#shape-profile-page">Shape 5</a></div>
-            <div class="shapelist-item"><a href="#shape-profile-page">Shape 6</a></div>
-            <div class="shapelist-item"><a href="#shape-profile-page">Shape 7</a></div>
-            <div class="shapelist-item"><a href="#shape-profile-page">Shape 8</a></div>
-            <div class="shapelist-item"><a href="#shape-profile-page">Shape 9</a></div>
-            <div class="shapelist-item"><a href="#shape-profile-page">Shape 10</a></div>
+            <div class="shapelist">
+                <div class="shapelist-item"><a href="#shape-profile-page">Shape 1</a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page">Shape 2</a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page">Shape 3</a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page">Shape 4</a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page">Shape 5</a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page">Shape 6</a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page">Shape 7</a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page">Shape 8</a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page">Shape 9</a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page">Shape 10</a></div>
+            </div>
+            <div class="floater bottom right">
+                <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
+            </div>
         </div>
         <footer data-role="footer">
             <ul>
@@ -114,6 +127,15 @@
                 <li><a href="#user-profile-page">Profile</a></li>
             </ul>
         </footer>
+
+        <div id="list-add-modal" class="modal">
+            <div class="modal-back" data-deactivate="#list-add-modal"></div>
+            <div class="modal-popup">
+                <div class="modal-head">Head</div>
+                <div class="modal-body">Body</div>
+                <div class="modal-foot">Foot</div>
+            </div>
+        </div>
     </section>
 
 
@@ -121,12 +143,11 @@
     <section data-role="page" id="user-profile-page">
         <header data-role="header">
             <h1>User Profile</h1>
-            <ul>
-                <li class="flex-stretch"></li>
-            </ul>
         </header>
         <div data-role="main">
-            logout
+            <div>
+                <a href="#" class="js-logout">Log out</a>
+            </div>
         </div>
         <footer data-role="footer">
             <ul>
