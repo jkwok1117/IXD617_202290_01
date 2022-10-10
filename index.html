@@ -23,7 +23,7 @@
     <section data-role="page" id="signin-page">
         <div data-role="main" class="display-flex flex-column">
             <div class="logo-box">
-                <img src="images/icons/logo.png" style="width: 100%; top: 80px;">
+                <img src="images/logo.png" style="width: 100%; top: 80px;">
             </div>
             <div class="flex-stretch"></div>
             <form class="form" id="signin-form" data-ajax="false">
@@ -99,9 +99,9 @@
         </div>
         <footer data-role="footer">
             <ul>
-                <li class="nav-icon"><a href="#list-page"><img src="images/icons/list.svg" style="width: 25px;"></a></li>
-                <li class="nav-icon"><a href="#map-page"><img src="images/icons/map.svg" style="width: 25px;"></a></li>
-                <li class="nav-icon"><a href="#user-profile-page"><img src="images/icons/profile.svg" style="width: 25px;"></a></li>
+                <li class="nav-icon" data-activateone=".nav-icon:nth-child(1)"><a href="#list-page"><img src="images/icons/list.svg"></a></li>
+                <li class="nav-icon" data-activateone=".nav-icon:nth-child(2)"><a href="#map-page"><img src="images/icons/map.svg"></a></li>
+                <li class="nav-icon" data-activateone=".nav-icon:nth-child(3)"><a href="#user-profile-page"><img src="images/icons/profile.svg"></a></li>
             </ul>
         </footer>
     </section>
@@ -117,7 +117,7 @@
                 <div class="shapelist-item" data-activate="#list-add-modal"><img src="images/icons/square.svg"></div>
                 <div class="shapelist-item"><a href="#circle-profile-page"><img src="images/icons/circle.svg"></a></div>
                 <div class="shapelist-item"><a href="#triangle-profile-page"><img src="images/icons/triangle.svg"></a></div>
-                <div class="shapelist-item"><a href="#pentagon-profile-page"><img src="images/icons/pentagon.svg"></a></div>
+                <div class="shapelist-item"><a href="#rectangle-profile-page"><img src="images/icons/rectangle.svg"></a></div>
                 <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
                 <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
                 <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
@@ -130,9 +130,9 @@
         </div>
         <footer data-role="footer">
             <ul>
-                <li class="nav-icon"><a href="#list-page"><img src="images/icons/list.svg" style="width: 25px;"></a></li>
-                <li class="nav-icon"><a href="#map-page"><img src="images/icons/map.svg" style="width: 25px;"></a></li>
-                <li class="nav-icon"><a href="#user-profile-page"><img src="images/icons/profile.svg" style="width: 25px;"></a></li>
+                <li class="nav-icon" data-activateone=".nav-icon:nth-child(1)"><a href="#list-page"><img src="images/icons/list.svg"></a></li>
+                <li class="nav-icon" data-activateone=".nav-icon:nth-child(2)"><a href="#map-page"><img src="images/icons/map.svg"></a></li>
+                <li class="nav-icon" data-activateone=".nav-icon:nth-child(3)"><a href="#user-profile-page"><img src="images/icons/profile.svg"></a></li>
             </ul>
         </footer>
 
@@ -146,8 +146,8 @@
                     </ul>
                 </div>
                 <div class="modal-body">
-                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
-                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                    <div class="list-item" data-activate="#square-window-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                    <div class="list-item" data-activate="#square-sign-detail-modal"><img class="list-img" src="images/square-sign.png"></div>
                     <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
                     <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
                     <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
@@ -174,9 +174,9 @@
         </div>
         <footer data-role="footer">
             <ul>
-                <li class="nav-icon"><a href="#list-page"><img src="images/icons/list.svg" style="width: 25px;"></a></li>
-                <li class="nav-icon"><a href="#map-page"><img src="images/icons/map.svg" style="width: 25px;"></a></li>
-                <li class="nav-icon"><a href="#user-profile-page"><img src="images/icons/profile.svg" style="width: 25px;"></a></li>
+                <li class="nav-icon" data-activateone=".nav-icon:nth-child(1)"><a href="#list-page"><img src="images/icons/list.svg"></a></li>
+                <li class="nav-icon" data-activateone=".nav-icon:nth-child(2)"><a href="#map-page"><img src="images/icons/map.svg"></a></li>
+                <li class="nav-icon" data-activateone=".nav-icon:nth-child(3)"><a href="#user-profile-page"><img src="images/icons/profile.svg"></a></li>
             </ul>
         </footer>
     </section>
@@ -200,21 +200,45 @@
     <!-- <div>
         <a href="#add-shape-page">Add Shape</a>
     </div> -->
-    <div id="square-detail-modal" class="modal">
-        <div class="modal-back" data-deactivate="#square-detail-modal"></div>
+
+    <!-- SHAPE DETAIL LIST -->
+    <div id="square-window-detail-modal" class="modal">
+        <div class="modal-back" data-deactivate="#square-window-detail-modal"></div>
         <div class="modal-drawer bottom">
             <div class="modal-head">
-                <h1>Square Window</h1>
+                <h1>Windows</h1>
                 <ul>
-                    <li data-deactivate="#square-detail-modal">&#60;</li>
+                    <li data-deactivate="#square-window-detail-modal">&#60;</li>
                     <li class="flex-stretch"></li>
-                    <li style="font-size: 20px;">Edit</li>
+                    <!-- <li><img src="images/icons/edit.svg" style="width: 25px;"></li> -->
                 </ul>
             </div>
-            <div class="detail-body"><img src="images/square-window.png"></div>
+            <div class="list-detail-body">
+                <img class="preview-img" src="images/square-window.png">
+                <div class="detail-map">
+                    <div class="pin-icon" data-activate="#list-detail-modal"><img src="images/icons/pin.svg"></div>
+                    <img src="images/map.png">
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- SHAPE DETAIL PAGE -->
+    <div id="list-detail-modal" class="modal">
+        <div class="modal-back" data-deactivate="#list-detail-modal"></div>
+        <div class="list-modal-popup">
+            <div class="modal-head">
+                <h1>Blue Window</h1>
+                <ul>
+                    <li data-deactivate="#list-add-modal">&#60;</li>
+                    <li class="flex-stretch"></li>
+                    <li><img src="images/icons/edit.svg" style="width: 20px;"></li>
+                </ul>
+            </div>
+            <div class="detail-body">
+                <img src="images/square-window.png">
+        </div>
+    </div>
 
     <!-- ADD PAGE -->
     <section data-role="page" id="add-shape-page">
