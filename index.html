@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal Tracker</title>
+    <title>Shape Shack</title>
 
     <!-- <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css"> -->
     <link rel="stylesheet" href="src/css/app.css">
@@ -22,49 +22,59 @@
     <!-- SIGNIN PAGE -->
     <section data-role="page" id="signin-page">
         <div data-role="main" class="display-flex flex-column">
+            <div class="logo-box">
+                <img src="images/icons/logo.png" style="width: 100%; top: 80px;">
+            </div>
             <div class="flex-stretch"></div>
             <form class="form" id="signin-form" data-ajax="false">
                 <div class="warning"></div>
+                <h1>Login your account</h1>
                 <div class="form-control">
-                    <label class="form-label" for="signin-username">Username</label>
-                    <input class="form-input" type="text" id="signin-username" data-role="none" placeholder="Type your Username">
+                    <!-- <label class="form-label" for="signin-username">Username</label> -->
+                    <input class="form-input" type="text" id="signin-username" data-role="none" placeholder="Username">
                 </div>
                 <div class="form-control">
-                    <label class="form-label" for="signin-password">Password</label>
-                    <input class="form-input" type="text" id="signin-password" data-role="none" placeholder="Type your Password">
+                    <!-- <label class="form-label" for="signin-password">Password</label> -->
+                    <input class="form-input" type="password" id="signin-password" data-role="none" placeholder="Password">
                 </div>
                 <div class="form-control">
-                    <input type="submit" class="form-button" value="Click me" data-role="none">
+                    <input type="submit" class="form-button" value="Login" data-role="none">
                 </div>
                 <div class="form-control" style="text-align:center; font-size: 0.7em">
                     Don't have an account? <a href="#signup-page">Sign Up!</a>
                 </div>
             </form>
+            <div class="flex-stretch"></div>
         </div>
     </section>
 
     <section data-role="page" id="signup-page">
-        <div data-role="main" class="display-flex flex-column flex-justify-center">
+        <div data-role="main" class="display-flex flex-column">
+            <div class="logo-box">
+                <img src="images/icons/logo.png" style="width: 100%; top: 80px;">
+            </div>
+            <div class="flex-stretch"></div>
             <form class="form" id="signup-form" data-ajax="false">
                 <div class="form-control">
-                    <label class="form-label" for="signup-username">Username</label>
-                    <input class="form-input" type="text" id="signup-username" data-role="none" placeholder="Type your Username">
+                    <!-- <label class="form-label" for="signup-username">Username</label> -->
+                    <input class="form-input" type="text" id="signup-username" data-role="none" placeholder="Insert Username">
                 </div>
                 <div class="form-control">
-                    <label class="form-label" for="signup-password">Type a Password</label>
-                    <input class="form-input" type="text" id="signup-password" data-role="none" placeholder="Type your Password">
+                    <!-- <label class="form-label" for="signup-password">Type a Password</label> -->
+                    <input class="form-input" type="password" id="signup-password" data-role="none" placeholder="Insert Password">
                 </div>
                 <div class="form-control">
-                    <label class="form-label" for="signup-confirm">Confirm Password</label>
-                    <input class="form-input" type="text" id="signup-confirm" data-role="none" placeholder="Type your Password">
+                    <!-- <label class="form-label" for="signup-confirm">Confirm Password</label> -->
+                    <input class="form-input" type="password" id="signup-confirm" data-role="none" placeholder="Confirm Password">
                 </div>
                 <div class="form-control">
-                    <input type="submit" class="form-button" value="Click me" data-role="none">
+                    <input type="submit" class="form-button" value="Sign Up" data-role="none">
                 </div>
                 <div class="form-control" style="text-align:center; font-size: 0.7em">
                     Already have an account? <a href="#signin-page">Sign In!</a>
                 </div>
             </form>
+            <div class="flex-stretch"></div>
         </div>
     </section>
 
@@ -73,7 +83,7 @@
     <section data-role="page" id="map-page">
         <div data-role="main">
             <div class="map"></div>
-            <div class="floater top left">
+            <div class="floater bottom right">
                 <a href="#" class="btn-circle" data-activate="#map-add-modal">&plus;</a>
             </div>
             <!-- <div>
@@ -89,12 +99,11 @@
         </div>
         <footer data-role="footer">
             <ul>
-                <li><a href="#list-page">List</a></li>
-                <li><a href="#map-page">Map</a></li>
-                <li><a href="#user-profile-page">Profile</a></li>
+                <li class="nav-icon"><a href="#list-page"><img src="images/icons/list.svg" style="width: 25px;"></a></li>
+                <li class="nav-icon"><a href="#map-page"><img src="images/icons/map.svg" style="width: 25px;"></a></li>
+                <li class="nav-icon"><a href="#user-profile-page"><img src="images/icons/profile.svg" style="width: 25px;"></a></li>
             </ul>
         </footer>
-        
     </section>
 
 
@@ -105,35 +114,49 @@
         </header>
         <div data-role="main">
             <div class="shapelist">
-                <div class="shapelist-item"><a href="#shape-profile-page">Shape 1</a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page">Shape 2</a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page">Shape 3</a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page">Shape 4</a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page">Shape 5</a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page">Shape 6</a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page">Shape 7</a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page">Shape 8</a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page">Shape 9</a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page">Shape 10</a></div>
+                <div class="shapelist-item" data-activate="#list-add-modal"><img src="images/icons/square.svg"></div>
+                <div class="shapelist-item"><a href="#circle-profile-page"><img src="images/icons/circle.svg"></a></div>
+                <div class="shapelist-item"><a href="#triangle-profile-page"><img src="images/icons/triangle.svg"></a></div>
+                <div class="shapelist-item"><a href="#pentagon-profile-page"><img src="images/icons/pentagon.svg"></a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
+                <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
             </div>
-            <div class="floater bottom right">
+            <!-- <div class="floater bottom right">
                 <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
-            </div>
+            </div> -->
         </div>
         <footer data-role="footer">
             <ul>
-                <li><a href="#list-page">List</a></li>
-                <li><a href="#map-page">Map</a></li>
-                <li><a href="#user-profile-page">Profile</a></li>
+                <li class="nav-icon"><a href="#list-page"><img src="images/icons/list.svg" style="width: 25px;"></a></li>
+                <li class="nav-icon"><a href="#map-page"><img src="images/icons/map.svg" style="width: 25px;"></a></li>
+                <li class="nav-icon"><a href="#user-profile-page"><img src="images/icons/profile.svg" style="width: 25px;"></a></li>
             </ul>
         </footer>
 
         <div id="list-add-modal" class="modal">
-            <div class="modal-back" data-deactivate="#list-add-modal"></div>
             <div class="modal-popup">
-                <div class="modal-head">Head</div>
-                <div class="modal-body">Body</div>
-                <div class="modal-foot">Foot</div>
+                <div class="modal-head">
+                    <h1>Square Profile</h1>
+                    <ul>
+                        <li data-deactivate="#list-add-modal">&#60;</li>
+                        <li class="flex-stretch"></li>
+                    </ul>
+                </div>
+                <div class="modal-body">
+                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                </div>
+                <!-- <div class="modal-foot">Foot</div> -->
             </div>
         </div>
     </section>
@@ -151,15 +174,15 @@
         </div>
         <footer data-role="footer">
             <ul>
-                <li><a href="#list-page">List</a></li>
-                <li><a href="#map-page">Map</a></li>
-                <li><a href="#user-profile-page">Profile</a></li>
+                <li class="nav-icon"><a href="#list-page"><img src="images/icons/list.svg" style="width: 25px;"></a></li>
+                <li class="nav-icon"><a href="#map-page"><img src="images/icons/map.svg" style="width: 25px;"></a></li>
+                <li class="nav-icon"><a href="#user-profile-page"><img src="images/icons/profile.svg" style="width: 25px;"></a></li>
             </ul>
         </footer>
     </section>
 
-    <!-- SHAPE PROFILE PAGE -->
-    <section data-role="page" id="shape-profile-page">
+    <!-- SHAPE PROFILE PAGE
+    <section data-role="page" id="square-profile-page">
         <header data-role="header">
             <h1>Shape Profile</h1>
             <ul>
@@ -171,7 +194,27 @@
         <div data-role="main">
             Shape Profile
         </div>
-    </section>
+    </section> -->
+
+    <!-- SHAPE DETAIl PAGE -->
+    <!-- <div>
+        <a href="#add-shape-page">Add Shape</a>
+    </div> -->
+    <div id="square-detail-modal" class="modal">
+        <div class="modal-back" data-deactivate="#square-detail-modal"></div>
+        <div class="modal-drawer bottom">
+            <div class="modal-head">
+                <h1>Square Window</h1>
+                <ul>
+                    <li data-deactivate="#square-detail-modal">&#60;</li>
+                    <li class="flex-stretch"></li>
+                    <li style="font-size: 20px;">Edit</li>
+                </ul>
+            </div>
+            <div class="detail-body"><img src="images/square-window.png"></div>
+        </div>
+    </div>
+
 
     <!-- ADD PAGE -->
     <section data-role="page" id="add-shape-page">
