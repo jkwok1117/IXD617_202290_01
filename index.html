@@ -86,9 +86,7 @@
             <div class="floater bottom right">
                 <a href="#" class="btn-circle" data-activate="#map-add-modal">&plus;</a>
             </div>
-            <!-- <div>
-                <a href="#add-shape-page">Add Shape</a>
-            </div> -->
+
             <div id="map-add-modal" class="modal">
                 <div class="modal-back" data-deactivate="#map-add-modal"></div>
                 <div class="modal-drawer left">
@@ -121,8 +119,6 @@
                 <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
                 <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
                 <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
             </div>
             <!-- <div class="floater bottom right">
                 <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
@@ -148,7 +144,7 @@
                 <div class="modal-body">
                     <div class="list-item" data-activate="#square-window-detail-modal"><img class="list-img" src="images/square-window.png"></div>
                     <div class="list-item" data-activate="#square-sign-detail-modal"><img class="list-img" src="images/square-sign.png"></div>
-                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
+                    <div class="list-item" data-activate="#square-table-detail-modal"><img class="list-img" src="images/square-table.png"></div>
                     <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
                     <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
                     <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
@@ -181,25 +177,6 @@
         </footer>
     </section>
 
-    <!-- SHAPE PROFILE PAGE
-    <section data-role="page" id="square-profile-page">
-        <header data-role="header">
-            <h1>Shape Profile</h1>
-            <ul>
-                <li><a href="#" data-rel="back">Back</a></li>
-                <li class="flex-stretch"></li>
-                <li><a href="#shape-edit-page">Edit</a></li>
-            </ul>
-        </header>
-        <div data-role="main">
-            Shape Profile
-        </div>
-    </section> -->
-
-    <!-- SHAPE DETAIl PAGE -->
-    <!-- <div>
-        <a href="#add-shape-page">Add Shape</a>
-    </div> -->
 
     <!-- SHAPE DETAIL LIST -->
     <div id="square-window-detail-modal" class="modal">
@@ -210,7 +187,7 @@
                 <ul>
                     <li data-deactivate="#square-window-detail-modal">&#60;</li>
                     <li class="flex-stretch"></li>
-                    <!-- <li><img src="images/icons/edit.svg" style="width: 25px;"></li> -->
+                    <li><img src="images/icons/add.svg" style="width: 25px;"></li>
                 </ul>
             </div>
             <div class="list-detail-body">
@@ -237,7 +214,14 @@
             </div>
             <div class="detail-body">
                 <img src="images/square-window.png">
-        </div>
+                <div class="detail-info">
+                    <ul>
+                        <li><span style="font-weight:500; color:var(--color-primary-red);">Date: </span>Oct 10, 2022</li>
+                        <li><span style="font-weight:500; color:var(--color-primary-red);">Location: </span>9th Ave, San Francisco, CA</li>
+                        <li><span style="font-weight:500; color:var(--color-primary-red);">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</li>
+                    </ul>
+                </div>
+            </div>
     </div>
 
     <!-- ADD PAGE -->
