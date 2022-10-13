@@ -84,16 +84,16 @@
         <div data-role="main">
             <div class="map"></div>
             <div class="floater bottom right">
-                <a href="#" class="btn-circle" data-activate="#map-add-modal">&plus;</a>
+                <a href="#" class="btn-circle" data-activate="#shape-add-new-modal"><img src="images/icons/add.svg" style="width: 25px; vertical-align: middle; padding-bottom: 4px;"></a>
             </div>
 
-            <div id="map-add-modal" class="modal">
+            <!-- <div id="map-add-modal" class="modal">
                 <div class="modal-back" data-deactivate="#map-add-modal"></div>
                 <div class="modal-drawer left">
                     <div class="modal-head">Head</div>
                     <div class="modal-body">Body</div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <footer data-role="footer">
             <ul>
@@ -187,7 +187,7 @@
                 <ul>
                     <li data-deactivate="#square-window-detail-modal">&#60;</li>
                     <li class="flex-stretch"></li>
-                    <li><img src="images/icons/add.svg" style="width: 25px;"></li>
+                    <li data-activate="#shape-add-modal"><img src="images/icons/add.svg" style="width: 25px;"></li>
                 </ul>
             </div>
             <div class="list-detail-body">
@@ -200,29 +200,172 @@
         </div>
     </div>
 
-    <!-- SHAPE DETAIL PAGE -->
-    <div id="list-detail-modal" class="modal">
-        <div class="modal-back" data-deactivate="#list-detail-modal"></div>
+        <!-- SHAP ADD NEW PAGE -->
+
+        <div id="shape-add-new-modal" class="modal">
+            <div class="modal-back" data-deactivate="#shape-add-new-modal"></div>
+            <div class="list-modal-popup">
+                <div class="modal-head">
+                    <h1>Add New Profile</h1>
+                    <ul>
+                        <li data-deactivate="#shape-add-new-modal">&#60;</li>
+                        <li class="flex-stretch"></li>
+                    </ul>
+                </div>
+                <div class="detail-body">
+                    <form class="form" id="add-form">
+                        <br>
+                        <div class="form-control">
+                            <input class="form-edit-input" type="text" id="add-title" data-role="none" placeholder="Title">
+                        </div>
+                        <div class="form-control">
+                            <select name="shapes">
+                                <option value="" disabled selected hidden>Choose a Shape</option>
+                                <option value="square">Square</option>
+                                <option value="circle">Circle</option>
+                                <option value="triangle">Triangle</option>
+                                <option value="rectangle">Rectangle</option>
+                                <option value="pentagon">Pentagon</option>
+                            </select>
+                        </div>
+                        <div class="form-control">
+                            <input class="form-edit-input" type="text" id="add-title" data-role="none" placeholder="Category">
+                        </div>
+                        <div class="form-control">
+                            <input class="form-edit-input" type="date" id="add-date" data-role="none">
+                        </div>
+                        <div class="form-control">
+                            <input class="form-edit-input" type="text" id="add-location" data-role="none" placeholder="Location">
+                        </div>
+                        <div class="form-control">
+                            <input class="form-edit-input" type="text" id="add-description" data-role="none" placeholder="Description">
+                        </div>
+                        <div class="image-upload-box">
+                            <label for="file">Upload New Image</label>
+                        </div>
+                        <div class="form-control">
+                            <input type="button" class="add-button" value="Save">
+                        </div>
+                        <div class="form-control" style="margin-bottom: 2em;" data-deactivate="#shape-add-new-modal">
+                            <input type="button" class="add-button" style=" background-color: var(--color-secondary-orange);" value="Cancel">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <!-- SHAP ADD PAGE -->
+
+    <div id="shape-add-modal" class="modal">
+        <div class="modal-back" data-deactivate="#shape-add-modal"></div>
         <div class="list-modal-popup">
             <div class="modal-head">
-                <h1>Blue Window</h1>
+                <h1>Add New Profile</h1>
                 <ul>
-                    <li data-deactivate="#list-add-modal">&#60;</li>
+                    <li data-deactivate="#shape-add-modal">&#60;</li>
                     <li class="flex-stretch"></li>
-                    <li><img src="images/icons/edit.svg" style="width: 20px;"></li>
                 </ul>
             </div>
             <div class="detail-body">
-                <img src="images/square-window.png">
+                <form class="form" id="add-form">
+                    <br>
+                    <div class="form-control">
+                        <input class="form-edit-input" type="text" id="add-title" data-role="none" placeholder="Title">
+                    </div>
+                    <div class="form-control">
+                        <input class="form-edit-input" type="date" id="add-date" data-role="none">
+                    </div>
+                    <div class="form-control">
+                        <input class="form-edit-input" type="text" id="add-location" data-role="none" placeholder="Location">
+                    </div>
+                    <div class="form-control">
+                        <input class="form-edit-input" type="text" id="add-description" data-role="none" placeholder="Description">
+                    </div>
+                    <div class="image-upload-box">
+                        <label for="file">Upload New Image</label>
+                    </div>
+                    <div class="form-control">
+                        <input type="button" class="add-button" value="Save">
+                    </div>
+                    <div class="form-control" style="margin-bottom: 2em;" data-deactivate="#shape-add-modal">
+                        <input type="button" class="add-button" style=" background-color: var(--color-secondary-orange);" value="Cancel">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SHAPE DETAIL PAGE -->
+    <div id="list-detail-modal" class="modal">
+        <div class="modal-back" data-deactivate="#list-detail-modal"></div>
+        <div class="modal-drawer bottom" style="height: 80%; border-radius: 15px 15px 0 0;">
+            <div class="modal-head">
+                <h1>Blue Window</h1>
+                <ul>
+                    <li data-deactivate="#list-detail-modal">&#60;</li>
+                    <li class="flex-stretch"></li>
+                    <li data-activate="#shape-edit-modal"><img src="images/icons/edit.svg" style="width: 20px;"></li>
+                </ul>
+            </div>
+            <div class="detail-body">
+                <img class="preview-img" src="images/square-window.png">
                 <div class="detail-info">
                     <ul>
-                        <li><span style="font-weight:500; color:var(--color-primary-red);">Date: </span>Oct 10, 2022</li>
-                        <li><span style="font-weight:500; color:var(--color-primary-red);">Location: </span>9th Ave, San Francisco, CA</li>
-                        <li><span style="font-weight:500; color:var(--color-primary-red);">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</li>
+                        <li><img class="list-icon" src="images/icons/date.svg">Oct 10, 2022</li><br>
+                        <li><img class="list-icon" src="images/icons/location.svg">9th Ave, San Francisco, CA</li><br>
+                        <li><span style="font-weight:500; color:var(--color-primary-red);">Description: </span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</li>
                     </ul>
+                    <div class="button">
+                        <input type="button" class="detail-button" value="View On Map">
+                    </div>
                 </div>
             </div>
+        </div>
     </div>
+
+
+    <!-- SHAP EDIT PAGE -->
+
+    <div id="shape-edit-modal" class="modal">
+        <div class="modal-back" data-deactivate="#shape-edit-modal"></div>
+        <div class="list-modal-popup">
+            <div class="modal-head">
+                <h1>Edit Profile</h1>
+                <ul>
+                    <li data-deactivate="#shape-edit-modal">&#60;</li>
+                    <li class="flex-stretch"></li>
+                </ul>
+            </div>
+            <div class="detail-body">
+                <form class="form" id="edit-form">
+                    <br>
+                    <div class="form-control">
+                        <input class="form-edit-input" type="text" id="edit-title" data-role="none" placeholder="Edit Title">
+                    </div>
+                    <div class="form-control">
+                        <input class="form-edit-input" type="date" id="edit-date" data-role="none">
+                    </div>
+                    <div class="form-control">
+                        <input class="form-edit-input" type="text" id="edit-location" data-role="none" placeholder="Edit Location">
+                    </div>
+                    <div class="form-control">
+                        <input class="form-edit-input" type="text" id="edit-description" data-role="none" placeholder="Edit Description">
+                    </div>
+                    <div class="image-upload-box">
+                        <label for="file">Upload New Image</label>
+                    </div>
+                    <div class="form-control">
+                        <input type="button" class="edit-button" value="Save">
+                    </div>
+                    <div class="form-control" style="margin-bottom: 2em;" data-deactivate="#shape-edit-modal">
+                        <input type="button" class="edit-button" style=" background-color: var(--color-secondary-orange);" value="Cancel">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- ADD PAGE -->
     <section data-role="page" id="add-shape-page">

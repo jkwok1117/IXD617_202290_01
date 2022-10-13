@@ -18,7 +18,7 @@ const checkSigninForm = () => {
         sessionStorage.removeItem("userId");
 
         $(".warning").html("");
-        setTimeout(()=>{$(".warning").html("");},3000)
+        setTimeout(()=>{$(".warning").html("Incorrect username or password.");},3000)
     }
 
     checkUserId();
