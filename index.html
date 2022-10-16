@@ -27,7 +27,15 @@
             </div>
             <div class="flex-stretch"></div>
             <form class="form" id="signin-form" data-ajax="false">
-                <div class="warning"></div>
+                <div class="warning" 
+                style="display: none;
+                background-color: var(--color-primary-red);
+                border-radius: 0.4em;
+                color: var(--color-neutral-light);
+                padding: 1em;
+                text-align: center;">
+                    <p>Incorrect username or password.</p>
+                </div>
                 <h1>Login your account</h1>
                 <div class="form-control">
                     <!-- <label class="form-label" for="signin-username">Username</label> -->
@@ -41,7 +49,7 @@
                     <input type="submit" class="form-button" value="Login" data-role="none">
                 </div>
                 <div class="form-control" style="text-align:center; font-size: 0.7em">
-                    Don't have an account? <a href="#signup-page">Sign Up!</a>
+                    Don't have an account? <a href="#signup-page" style="display: inline;">Sign Up!</a>
                 </div>
             </form>
             <div class="flex-stretch"></div>
@@ -71,7 +79,7 @@
                     <input type="submit" class="form-button" value="Sign Up" data-role="none">
                 </div>
                 <div class="form-control" style="text-align:center; font-size: 0.7em">
-                    Already have an account? <a href="#signin-page">Sign In!</a>
+                    Already have an account? <a href="#signin-page" style="display: inline;">Sign In!</a>
                 </div>
             </form>
             <div class="flex-stretch"></div>
@@ -86,14 +94,6 @@
             <div class="floater bottom right">
                 <a href="#" class="btn-circle" data-activate="#shape-add-new-modal"><img src="images/icons/add.svg" style="width: 25px; vertical-align: middle; padding-bottom: 4px;"></a>
             </div>
-
-            <!-- <div id="map-add-modal" class="modal">
-                <div class="modal-back" data-deactivate="#map-add-modal"></div>
-                <div class="modal-drawer left">
-                    <div class="modal-head">Head</div>
-                    <div class="modal-body">Body</div>
-                </div>
-            </div> -->
         </div>
         <footer data-role="footer">
             <ul>
@@ -157,25 +157,6 @@
         </div>
     </section>
 
-
-    <!-- USER PROFILE PAGE -->
-    <section data-role="page" id="user-profile-page">
-        <header data-role="header">
-            <h1>User Profile</h1>
-        </header>
-        <div data-role="main">
-            <div>
-                <a href="#" class="js-logout">Log out</a>
-            </div>
-        </div>
-        <footer data-role="footer">
-            <ul>
-                <li class="nav-icon" data-activateone=".nav-icon:nth-child(1)"><a href="#list-page"><img src="images/icons/list.svg"></a></li>
-                <li class="nav-icon" data-activateone=".nav-icon:nth-child(2)"><a href="#map-page"><img src="images/icons/map.svg"></a></li>
-                <li class="nav-icon" data-activateone=".nav-icon:nth-child(3)"><a href="#user-profile-page"><img src="images/icons/profile.svg"></a></li>
-            </ul>
-        </footer>
-    </section>
 
 
     <!-- SHAPE DETAIL LIST -->
@@ -298,7 +279,7 @@
     <!-- SHAPE DETAIL PAGE -->
     <div id="list-detail-modal" class="modal">
         <div class="modal-back" data-deactivate="#list-detail-modal"></div>
-        <div class="modal-drawer bottom" style="height: 80%; border-radius: 15px 15px 0 0;">
+        <div class="modal-drawer bottom" style="height: 80%; border-radius: 10px 10px 0 0;">
             <div class="modal-head">
                 <h1>Blue Window</h1>
                 <ul>
@@ -366,17 +347,61 @@
     </div>
 
 
+        <!-- USER PROFILE PAGE -->
+        <section data-role="page" id="user-profile-page">
+            <div data-role="main">
+                <div class="profile">
+                    <ul>
+                        <li class="flex-stretch"></li>
+                        <li class="flex-stretch"></li>
+                        <li data-activate="#setting-modal-drawer"><img src="images/icons/setting.svg" style="width: 25px;"></li>
+                    </ul>
+                    <img class="profile-img" src="images/profile.png.jpg">
+                <div class="profile-name">
+                    <h1>James Dan</h1>
+                    <p>San Francisco, CA</p>
+                </div>
+                    <div class="profile content">
+                        <div class="content">
+                            <!-- <h3>Bio</h3> -->
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos amet reiciendis velit quis.
+                                Inventore praesentium porro rem neque dignissimos dolorum doloribus non veniam dicta, accusamus voluptatibus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer data-role="footer">
+                <ul>
+                    <li class="nav-icon" data-activateone=".nav-icon:nth-child(1)"><a href="#list-page"><img src="images/icons/list.svg"></a></li>
+                    <li class="nav-icon" data-activateone=".nav-icon:nth-child(2)"><a href="#map-page"><img src="images/icons/map.svg"></a></li>
+                    <li class="nav-icon" data-activateone=".nav-icon:nth-child(3)"><a href="#user-profile-page"><img src="images/icons/profile.svg"></a></li>
+                </ul>
+            </footer>
+        </section>
 
-    <!-- ADD PAGE -->
-    <section data-role="page" id="add-shape-page">
-        <header data-role="header">
-            <h1>Add Shape</h1>
-            <ul>
-                <li><a href="#" data-rel="back">X</a></li>
-                <li class="flex-stretch"></li>
-            </ul>
-        </header>
-        save
-    </section>
-</body>
-</html>
+
+
+        <!-- SETTING PAGE -->
+        <div id="setting-modal-drawer" class="modal">
+            <div class="modal-back" data-deactivate="#setting-modal-drawer"></div>
+            <div class="modal-drawer bottom" style="height: 25%; border-radius: 10px 10px 0 0;">
+                <div class="profile-head">
+                    <h1>Settings</h1>
+                    <ul>
+                        <li data-deactivate="#setting-modal-drawer">&#60;</li>
+                        <li class="flex-stretch"></li>
+                    </ul>
+                </div>
+                <div class="profile-body">
+                    <ul>
+                        <div style="display:flex;">
+                            <li>Profile Settings</li>
+                            <li class="flex-stretch"></li>
+                            <li>&#62;</li>
+                        </div>
+                        <br>
+                        <li><a href="#" class="js-logout" data-deactivate="#setting-modal-drawer">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>

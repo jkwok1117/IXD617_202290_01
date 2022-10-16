@@ -17,8 +17,8 @@ const checkSigninForm = () => {
         console.log("Failure");
         sessionStorage.removeItem("userId");
 
-        $(".warning").html("");
-        setTimeout(()=>{$(".warning").html("Incorrect username or password.");},3000)
+        $(".warning").css("display", "block");
+        setTimeout(()=>{$(".warning").css("display", "none");},3000)
     }
 
     checkUserId();
