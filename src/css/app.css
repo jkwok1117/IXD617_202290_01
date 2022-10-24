@@ -480,6 +480,7 @@ h1 {
 
 /* EDIT FORM */
 #add-form,
+#new-shape-form,
 #edit-form {
     padding: 0em 2em;
 }
