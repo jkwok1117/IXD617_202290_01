@@ -43,7 +43,7 @@ die(
     json_encode(
         makeQuery(
             makeConn(),
-            "SELECT * FROM track_animals WHERE user_id=4 AND type='dog'",
+            "SELECT * FROM track_shapes WHERE user_id=4 AND type='square'",
             []
         )
     )
