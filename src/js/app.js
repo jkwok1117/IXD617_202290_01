@@ -37,7 +37,7 @@ $(() => {
         sessionStorage.shapeId = id;
     })
 
-    .on("click", ".nav-link", function(e){
+    .on("click", ".nav-link", function(e) {
         let id = $(this).index();
         $(this).parent().next().children().eq(id)
             .addClass("active")

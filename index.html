@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <script src="lib/js/jquery-2.2.4.min.js"></script>
-    <script src="src/js/app.js" type="module"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="src/js/app.js" type="module"></script>
 </head>
 <body>
 
@@ -110,7 +110,7 @@
             <h1>Shape List</h1>
         </header>
         <div data-role="main">
-            <div class="shapelist">
+            <div class="shapelist"></div>
                 <!-- <div class="shapelist-item" data-activate="#list-add-modal"><img src="images/icons/square.svg"></div>
                 <div class="shapelist-item"><a href="#circle-profile-page"><img src="images/icons/circle.svg"></a></div>
                 <div class="shapelist-item"><a href="#triangle-profile-page"><img src="images/icons/triangle.svg"></a></div>
@@ -118,7 +118,7 @@
                 <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
                 <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
                 <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div> -->
-            </div>
+            
             <!-- <div class="floater bottom right">
                 <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
             </div> -->
@@ -131,7 +131,7 @@
             </ul>
         </footer>
 
-        <div id="list-add-modal" class="modal">
+        <!-- <div id="list-add-modal" class="modal">
             <div class="modal-popup">
                 <div class="modal-head">
                     <h1>Square Profile</h1>
@@ -151,12 +151,35 @@
                     <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
                     <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
                 </div>
-                <!-- <div class="modal-foot">Foot</div> -->
+                <div class="modal-foot">Foot</div> -->
+            <!-- </div>
+        </div> -->
+    </section>
+
+    <!-- Shape PROFILE PAGE -->
+    <section data-role="page" id="shape-profile-page">
+        <header data-role="header">
+            <h1></h1>
+            <ul class="shape-profile-head">
+                <li><a href="#" data-rel="back"></a>&#60;</li>
+                <li class="flex-stretch"></li>
+                <li><a href="#shape-edit-page" style="padding: 0;"><img src="images/icons/edit.svg" style="width: 20px;"></a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <div class="shape-profile-top"></div>
+            <div class="shape-profile-nav">
+                <div class="nav-link active">Map</div>
+                <div class="nav-link">Description</div>
+            </div>
+            <div class="shape-profile-bottom">
+                <div class="shape-profile-section section-map active">
+                    <div class="map"></div>
+                </div>
+                <div class="shape-profile-section section-description"></div>
             </div>
         </div>
     </section>
-
-
 
     <!-- SHAPE DETAIL LIST -->
     <div id="square-window-detail-modal" class="modal">
@@ -348,27 +371,35 @@
 
         <!-- USER PROFILE PAGE -->
         <section data-role="page" id="user-profile-page">
-            <div data-role="main">
+            <header data-role="header">
                 <div class="profile">
                     <ul>
                         <li class="flex-stretch"></li>
                         <li class="flex-stretch"></li>
                         <li data-activate="#setting-modal-drawer"><img src="images/icons/setting.svg" style="width: 25px;"></li>
                     </ul>
-                    <img class="profile-img" src="images/profile.png.jpg">
+                </div>
+            </header>
+            <div data-role="main">
+                <!-- <div class="profile">
+                    <ul>
+                        <li class="flex-stretch"></li>
+                        <li class="flex-stretch"></li>
+                        <li data-activate="#setting-modal-drawer"><img src="images/icons/setting.svg" style="width: 25px;"></li>
+                    </ul> -->
+                    <!-- <img class="profile-img" src="images/profile.png.jpg">
                 <div class="profile-name">
                     <h1>James Dan</h1>
                     <p>San Francisco, CA</p>
                 </div>
                     <div class="profile content">
                         <div class="content">
-                            <!-- <h3>Bio</h3> -->
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos amet reiciendis velit quis.
+                            <h3>Bio</h3> -->
+                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos amet reiciendis velit quis.
                                 Inventore praesentium porro rem neque dignissimos dolorum doloribus non veniam dicta, accusamus voluptatibus</p>
                         </div>
-                    </div>
+                    </div> --> -->
                 </div>
-            </div>
             <footer data-role="footer">
                 <ul>
                     <li class="nav-icon" data-activateone=".nav-icon:nth-child(1)"><a href="#list-page"><img src="images/icons/list.svg"></a></li>

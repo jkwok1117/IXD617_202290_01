@@ -554,16 +554,93 @@ select {
 
 /* SHAPE LIST */
 .shapelist {
-    background-color: var(--color-neutral-light);
-    height: 100%;
+    /* background-color: var(--color-neutral-light); */
+    /* height: 100%; */
     position: relative;
-    overflow: auto;
-    display: grid;
-    grid-template-columns: auto auto;
-    padding: 2em;
-    gap: 2rem 3rem;
-    align-items: center;
+    overflow: scroll;
+    padding: 1em;
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
 }
+
+.shapelist-item {
+    display: inline-grid;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 15%);
+    margin: 1em 0;
+    border-radius: 2em;
+    overflow: hidden;
+    font-weight:normal;
+    color:inherit;
+}
+.shapelist-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    vertical-align: text-bottom;
+}
+.shapelist-body {
+    padding: 1em;
+}
+.shapelist-name {
+    font-size:1.3em;
+}
+
+
+.shape-profile-head li {
+    padding: 0 1em;
+    display: block;
+    font-weight: 500;
+    font-size: 30px;
+}
+#shape-profile-page [data-role="main"] {
+    display: flex;
+    flex-direction: column;
+}
+.shape-profile-top {
+    height: 30vh;
+    flex: none;
+    background-position: center;
+    background-size: cover;
+}
+.shape-profile-nav {
+    flex: none;
+    line-height: 3rem;
+    display: flex;
+}
+.nav-link {
+    flex: 1 1 50%;
+    text-align: center;
+}
+.nav-link.active {
+    color: var(--color-neutral-light);
+    background-color: var(--color-secondary-purple);
+}
+.shape-profile-bottom {
+    position: relative;
+    flex: 1 1 100%;
+}
+.shape-profile-section{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+.shape-profile-section.active {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+
+
+
+
+
 .nav-icon img {
     width: 1.5em;
 }
@@ -587,7 +664,7 @@ select {
     position: absolute;
 }
 .profile li {
-    padding: 1.3em 1.3em;
+    padding: 0.5em 1.3em;
     display: block;
 }
 .profile h1 {
