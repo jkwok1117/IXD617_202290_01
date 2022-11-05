@@ -1,12 +1,26 @@
+import { ShapeProfilePage, ListPage, MapPage, UserProfilePage } from "./routes.js";
+import { checkSigninForm, checkUserId } from "./signin.js";
 
 // Document Ready
 $(() => {
 
     checkUserId();
 
-    // EVENT DELEGATION
     $(document)
 
+    .on("pagecontainerbeforeshow", function(event, ui) {
+        
+        /* PAGE ROUTES */
+        switch(ui.toPage[0].id) {
+            case "map-page": MapPage(); break;
+            case "list-page": ListPage(); break;
+            case "user-profile-page": UserProfilePage(); break;
+            case "shape-profile-page": ShapeProfilePage(); break;
+        }
+    })
+
+
+    // EVENT DELEGATION
     .on("submit", "#signin-form", function(e) {
         e.preventDefault();
         checkSigninForm();
@@ -17,7 +31,20 @@ $(() => {
         checkUserId();
     })
 
+    .on("click", ".shape-jump", function(e) {
+        let id = $(this).data("id");
 
+        sessionStorage.shapeId = id;
+    })
+
+    .on("click", ".nav-link", function(e){
+        let id = $(this).index();
+        $(this).parent().next().children().eq(id)
+            .addClass("active")
+            .siblings().removeClass("active");
+        $(this).addClass("active")
+            .siblings().removeClass("active");
+    })
 
     // ACTIVATE TOOLS
     .on("click", "[data-activate]", function(e) {
