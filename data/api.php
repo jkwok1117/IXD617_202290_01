@@ -45,12 +45,12 @@ function makeStatement($data) {
     $params = @$data->params;
 
     switch($type) {
-        case "users_all":
-            return makeQuery($conn, "SELECT * FROM `track_users`", $params);
-        case "shapes_all":
-            return makeQuery($conn, "SELECT * FROM `track_shapes`", $params);
-        case "locations_all":
-            return makeQuery($conn, "SELECT * FROM `track_locations`", $params);
+        // case "users_all":
+        //     return makeQuery($conn, "SELECT * FROM `track_users`", $params);
+        // case "shapes_all":
+        //     return makeQuery($conn, "SELECT * FROM `track_shapes`", $params);
+        // case "locations_all":
+        //     return makeQuery($conn, "SELECT * FROM `track_locations`", $params);
             
         case "user_by_id":
             return makeQuery($conn, "SELECT id,name,email,username,img,date_create FROM `track_users` WHERE `id`=?", $params);
@@ -66,6 +66,37 @@ function makeStatement($data) {
             return makeQuery($conn, "SELECT * FROM `track_locations` WHERE `shape_id`=?", $params);
 
         
+        case "shape_locations_by_user_id":
+            return makeQuery($conn, "SELECT *
+            FROM `track_shapes` a
+            JOIN (
+                SELECT * FROM `track_locations`
+            ) l
+            ON a.id = l.shape_id
+            WHERE `user_id`=?
+            ", $params);
+
+        case "recent_shape_locations":
+            return makeQuery($conn, "SELECT *
+            FROM `track_shapes` a
+            JOIN (
+                SELECT lg.*
+                FROM `track_locations` lg
+                WHERE lg.id = (
+                    SELECT lt.id
+                    FROM `track_locations` lt
+                    WHERE lt.shape_id = lg.shape_id
+                    ORDER BY lt.date_create DESC
+                    LIMIT 1
+                )
+            ) l
+            ON a.id = l.shape_id
+            WHERE `user_id`=?
+            ORDER BY l.shape_id, l.date_create DESC
+            ", $params);
+
+
+
 
         case "check_signin":
             return makeQuery($conn, "SELECT `id` FROM `track_users` WHERE `username`=? AND `password` = md5(?)", $params);
