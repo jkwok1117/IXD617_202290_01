@@ -29,7 +29,6 @@
             <div class="logo-box">
                 <img src="images/logo.png" style="width: 100%; top: 80px;">
             </div>
-            <div class="flex-stretch"></div>
             <form class="form" id="signin-form" data-ajax="false">
                 <div class="warning" 
                 style="display: none;
@@ -56,7 +55,6 @@
                     Don't have an account? <a href="#signup-page" style="display: inline;">Sign Up!</a>
                 </div>
             </form>
-            <div class="flex-stretch"></div>
         </div>
     </section>
 
@@ -96,7 +94,7 @@
         <div data-role="main">
             <div class="map"></div>
             <div class="floater bottom right">
-                <a href="#" class="btn-circle" data-activate="#shape-add-new-modal"><img src="images/icons/add.svg" style="width: 25px; vertical-align: middle; padding-bottom: 4px;"></a>
+                <a href="#shape-add-new" class="btn-circle"><img src="images/icons/add.svg" style="width: 25px; vertical-align: middle; padding-bottom: 4px;"></a>
             </div>
         </div>
         <footer data-role="footer">
@@ -113,6 +111,11 @@
     <section data-role="page" id="list-page">
         <header data-role="header">
             <h1>Shape List</h1>
+            <ul>
+                <li class="flex-stretch"></li>
+                <li class="flex-stretch"></li>
+                <li class="shape-list-icon" data-activate="#shape-add-modal"><img src="images/icons/add.svg" style="width: 25px;"></li>
+            </ul>
         </header>
         <div data-role="main">
             <div class="shapelist"></div>
@@ -120,11 +123,8 @@
                 <div class="shapelist-item"><a href="#circle-profile-page"><img src="images/icons/circle.svg"></a></div>
                 <div class="shapelist-item"><a href="#triangle-profile-page"><img src="images/icons/triangle.svg"></a></div>
                 <div class="shapelist-item"><a href="#rectangle-profile-page"><img src="images/icons/rectangle.svg"></a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div>
-                <div class="shapelist-item"><a href="#shape-profile-page"><img src="images/icons/pentagon.svg"></a></div> -->
             
-            <!-- <div class="floater bottom right">
+                <div class="floater bottom right">
                 <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
             </div> -->
         </div>
@@ -173,102 +173,117 @@
         </header>
         <div data-role="main">
             <div class="shape-profile-top"></div>
-            <div class="shape-profile-nav">
+            <!-- <div class="shape-profile-nav">
                 <div class="nav-link active">Map</div>
                 <div class="nav-link">Description</div>
-            </div>
+            </div> -->
             <div class="shape-profile-bottom">
                 <div class="shape-profile-section section-map active">
                     <div class="map"></div>
                 </div>
-                <div class="shape-profile-section section-description"></div>
+
+                <div id="list-detail-modal" class="modal">
+                    <div class="modal-back transparent" data-deactivate="#list-detail-modal"></div>
+                    <div class="modal-drawer bottom" style="height: 90%; border-radius: 10px 10px 0 0;">
+                        <div class="profile-des-body"></div>
+                    </div>
+                </div> 
+                <!-- <div class="shape-profile-section section-description"></div> -->
             </div>
         </div>
     </section>
 
-    <!-- SHAPE DETAIL LIST -->
-    <div id="square-window-detail-modal" class="modal">
-        <div class="modal-back" data-deactivate="#square-window-detail-modal"></div>
-        <div class="modal-drawer bottom">
-            <div class="modal-head">
-                <h1>Windows</h1>
-                <ul>
-                    <li data-deactivate="#square-window-detail-modal">&#60;</li>
+    <!-- SHAPE EDIT PAGE -->
+    <section data-role="page" id="shape-edit-page">
+        <header data-role="header">
+            <h1>Edit Shape</h1>
+            <ul class="shape-profile-head">
+                <li><a href="#" data-rel="back">&#60;</a></li>
+                <li class="flex-stretch"></li>
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <form data-role="main" data-ajax="false" id="shape-edit-form" class="padded display-flex flex-column full overscroll">
+            <div class="body"></div>
+            <div class="flex-stretch"></div>
+            
+            <div class="form-control">
+                <input class="form-button" type="submit" data-role="none" value="Submit">
+            </div>
+        </form>
+    </section>
+
+        <!-- ADD NEW PROFILES -->
+
+        <section data-role="page" id="shape-add-new">
+            <header data-role="header">
+                <h1>Add New Profiles</h1>
+                <ul class="shape-profile-head">
+                    <li><a href="#" data-rel="back">&#60;</a></li>
                     <li class="flex-stretch"></li>
-                    <li data-activate="#shape-add-modal"><img src="images/icons/add.svg" style="width: 25px;"></li>
+                    <li class="flex-stretch"></li>
                 </ul>
+            </header>
+            <div data-role="main">
+                <form class="form" id="new-shape-form">
+                    <br>
+                    <div class="form-control">
+                        <input class="form-edit-input" type="text" id="add-new-title" data-role="none" placeholder="Title">
+                    </div>
+                    <div class="form-control" style="margin: 2em 0;">
+                        <select name="shapes">
+                            <option value="" disabled selected hidden>Choose a Shape</option>
+                            <option value="square">Square</option>
+                            <option value="circle">Circle</option>
+                            <option value="triangle">Triangle</option>
+                            <option value="rectangle">Rectangle</option>
+                            <option value="pentagon">Pentagon</option>
+                        </select>
+                    </div>
+                    <div class="form-control" style="margin: 2em 0;">
+                        <input class="form-edit-input" type="text" id="add-new-category" data-role="none" placeholder="Category">
+                    </div>
+                    <div class="form-control" style="margin: 2em 0;">
+                        <input class="form-edit-input" type="date" id="add-new-date" data-role="none">
+                    </div>
+                    <div class="form-control" style="margin: 2em 0;">
+                        <input class="form-edit-input" type="text" id="add-new-description" data-role="none" placeholder="Description">
+                    </div>
+                    <div class="image-upload-box" style="margin-bottom: 5em;">
+                        <label for="file" style="height: 12em; line-height: 11.5em; font-weight: 500;">Upload New Image</label>
+                    </div>
+                    <div class="form-control">
+                        <a href="#choose-location-page"><input type="button" class="add-button" value="Next" data-role="none"></a>
+                    </div>
+                    <div class="form-control" style="margin-bottom: 2em;">
+                        <a href="#" data-rel="back"><input type="button" class="add-button" style=" background-color: var(--color-secondary-orange);" value="Cancel" data-role="none"></a>
+                    </div>
+                </form>
             </div>
-            <div class="list-detail-body">
-                <img class="preview-img" src="images/square-window.png">
-                <div class="detail-map">
-                    <div class="pin-icon" data-activate="#list-detail-modal"><img src="images/icons/pin.svg"></div>
-                    <img src="images/map.png">
-                </div>
-            </div>
+        </section>
+
+        <!-- CHOOSE LOCATION PAGE -->
+    <section data-role="page" id="choose-location-page">
+        <header data-role="header">
+            <h1>Choose Location</h1>
+            <ul class="shape-profile-head">
+                <li><a href="#" data-rel="back">&#60;</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#choose-description-page">&#62;</a></li>
+            </ul>
+        </header>
+        <div data-role="main">
+            <div class="map"></div>
         </div>
-    </div>
+    </section>
 
-        <!-- SHAP ADD NEW PAGE -->
-
-        <div id="shape-add-new-modal" class="modal">
-            <div class="modal-back" data-deactivate="#shape-add-new-modal"></div>
-            <div class="list-modal-popup">
-                <div class="modal-head">
-                    <h1>Add Shape Profile</h1>
-                    <ul>
-                        <li data-deactivate="#shape-add-new-modal">&#60;</li>
-                        <li class="flex-stretch"></li>
-                    </ul>
-                </div>
-                <div class="detail-body">
-                    <form class="form" id="new-shape-form">
-                        <br>
-                        <div class="form-control">
-                            <input class="form-edit-input" type="text" id="add-new-title" data-role="none" placeholder="Title">
-                        </div>
-                        <div class="form-control">
-                            <select name="shapes">
-                                <option value="" disabled selected hidden>Choose a Shape</option>
-                                <option value="square">Square</option>
-                                <option value="circle">Circle</option>
-                                <option value="triangle">Triangle</option>
-                                <option value="rectangle">Rectangle</option>
-                                <option value="pentagon">Pentagon</option>
-                            </select>
-                        </div>
-                        <div class="form-control">
-                            <input class="form-edit-input" type="text" id="add-new-category" data-role="none" placeholder="Category">
-                        </div>
-                        <div class="form-control">
-                            <input class="form-edit-input" type="date" id="add-new-date" data-role="none">
-                        </div>
-                        <div class="form-control">
-                            <input class="form-edit-input" type="text" id="add-new-location" data-role="none" placeholder="Location">
-                        </div>
-                        <div class="form-control">
-                            <input class="form-edit-input" type="text" id="add-new-description" data-role="none" placeholder="Description">
-                        </div>
-                        <div class="image-upload-box">
-                            <label for="file">Upload New Image</label>
-                        </div>
-                        <div class="form-control">
-                            <input type="button" class="add-button" value="Save">
-                        </div>
-                        <div class="form-control" style="margin-bottom: 2em;" data-deactivate="#shape-add-new-modal">
-                            <input type="button" class="add-button" style=" background-color: var(--color-secondary-orange);" value="Cancel">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-    <!-- SHAP ADD PAGE -->
+    <!-- SHAPE ADD PAGE -->
 
     <div id="shape-add-modal" class="modal">
         <div class="modal-back" data-deactivate="#shape-add-modal"></div>
         <div class="list-modal-popup">
             <div class="modal-head">
-                <h1>Add New Profile</h1>
+                <h1>Add New Shape</h1>
                 <ul>
                     <li data-deactivate="#shape-add-modal">&#60;</li>
                     <li class="flex-stretch"></li>
@@ -282,6 +297,9 @@
                     </div>
                     <div class="form-control">
                         <input class="form-edit-input" type="date" id="add-date" data-role="none">
+                    </div>
+                    <div class="form-control">
+                        <input class="form-edit-input" type="text" id="add-shape" data-role="none" placeholder="Shape">
                     </div>
                     <div class="form-control">
                         <input class="form-edit-input" type="text" id="add-location" data-role="none" placeholder="Location">
@@ -304,7 +322,8 @@
     </div>
 
     <!-- SHAPE DETAIL PAGE -->
-    <div id="list-detail-modal" class="modal">
+
+    <!-- <div id="list-detail-modal" class="modal">
         <div class="modal-back" data-deactivate="#list-detail-modal"></div>
         <div class="modal-drawer bottom" style="height: 80%; border-radius: 10px 10px 0 0;">
             <div class="modal-head">
@@ -329,16 +348,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
-    <!-- SHAP EDIT PAGE -->
+    <!-- SHAPE EDIT PAGE -->
 
-    <div id="shape-edit-modal" class="modal">
+    <!-- <div id="shape-edit-modal" class="modal">
         <div class="modal-back" data-deactivate="#shape-edit-modal"></div>
         <div class="list-modal-popup">
             <div class="modal-head">
-                <h1>Edit Profile</h1>
+                <h1>Edit Shape</h1>
                 <ul>
                     <li data-deactivate="#shape-edit-modal">&#60;</li>
                     <li class="flex-stretch"></li>
@@ -371,40 +390,12 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
         <!-- USER PROFILE PAGE -->
         <section data-role="page" id="user-profile-page">
-            <header data-role="header">
-                <div class="profile">
-                    <ul>
-                        <li class="flex-stretch"></li>
-                        <li class="flex-stretch"></li>
-                        <li data-activate="#setting-modal-drawer"><img src="images/icons/setting.svg" style="width: 25px;"></li>
-                    </ul>
-                </div>
-            </header>
-            <div data-role="main">
-                <!-- <div class="profile">
-                    <ul>
-                        <li class="flex-stretch"></li>
-                        <li class="flex-stretch"></li>
-                        <li data-activate="#setting-modal-drawer"><img src="images/icons/setting.svg" style="width: 25px;"></li>
-                    </ul> -->
-                    <!-- <img class="profile-img" src="images/profile.png.jpg">
-                <div class="profile-name">
-                    <h1>James Dan</h1>
-                    <p>San Francisco, CA</p>
-                </div>
-                    <div class="profile content">
-                        <div class="content">
-                            <h3>Bio</h3> -->
-                            <!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos amet reiciendis velit quis.
-                                Inventore praesentium porro rem neque dignissimos dolorum doloribus non veniam dicta, accusamus voluptatibus</p>
-                        </div>
-                    </div> --> -->
-                </div>
+            <div data-role="main"></div>
             <footer data-role="footer">
                 <ul>
                     <li class="nav-icon" data-activateone=".nav-icon:nth-child(1)"><a href="#list-page"><img src="images/icons/list.svg"></a></li>
@@ -430,13 +421,33 @@
                 <div class="profile-body">
                     <ul>
                         <div style="display:flex;">
-                            <li>Profile Settings</li>
+                            <li data-deactivate="#setting-modal-drawer"><a href="#user-edit-page" style="color: var(--color-neutral-dark);">Edit Profile</a></li>
                             <li class="flex-stretch"></li>
-                            <li>&#62;</li>
+                            <li data-deactivate="#setting-modal-drawer"><a href="#user-edit-page" style="color: var(--color-neutral-dark);">&#62;</a></li>
                         </div>
                         <br>
-                        <li><a href="#" class="js-logout" data-deactivate="#setting-modal-drawer">Log out</a></li>
+                        <li class="logout"><a href="#" class="js-logout" data-deactivate="#setting-modal-drawer">Log out</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+
+        <!-- USER EDIT PAGE -->
+        <section data-role="page" id="user-edit-page">
+            <header data-role="header">
+                <h1>Edit User</h1>
+                <ul class="shape-profile-head">
+                    <li><a href="#" data-rel="back">&#60;</a></li>
+                    <li class="flex-stretch"></li>
+                    <li class="flex-stretch"></li>
+                </ul>
+            </header>
+            <form data-role="main" data-ajax="false" id="user-edit-form" class="padded display-flex flex-column full overscroll">
+                <div class="body"></div>
+                <div class="flex-stretch"></div>
+                
+                <div class="form-control">
+                    <input class="form-button" style="margin-top: 5em;" type="submit" data-role="none" value="Submit">
+                </div>
+            </form>
+        </section>    

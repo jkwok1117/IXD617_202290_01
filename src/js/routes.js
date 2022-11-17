@@ -1,33 +1,9 @@
 import { query } from "./functions.js"
 import { makeMap, makeMarkers } from "./map.js";
-import { makeShapeList, makeShapeProfileDescription, makeUserProfilePage } from "./parts.js";
+import { makeEditShapeForm, makeEditUserForm, makeShapeDetailDescription, makeShapeList, makeUserProfilePage } from "./parts.js";
 
 
 export const MapPage = async() => {
-    // let {result:shapes} = await query({
-    //     type:"shape_locations_by_user_id",
-    //     params:[sessionStorage.userId]
-    // });
-
-    // console.log(shapes);
-
-    // let my_shapes_ids = [...new Set(shapes.map(o=>o.shape_id))];
-    // console.log(my_shapes_ids);
-    // let last_locations = my_shapes_ids.map(id=>{
-    //     let locations = shapes.filter(o=>id===o.shape_id);
-    //     locations.sort((a, b) => {
-    //         if (a.date_create > b.date_create) {
-    //           return 1;
-    //         }
-    //         if (a.date_create < b.date_create) {
-    //           return -1;
-    //         }
-    //         return 0;
-    //       });
-    //     return locations.slice(-1)[0];
-    // })
-    // console.log(last_locations);
-
     let {result:shape_locations} = await query({
         type:"recent_shape_locations",
         params:[sessionStorage.userId]
@@ -42,6 +18,18 @@ export const MapPage = async() => {
 
     let map_el = await makeMap("#map-page .map");
     makeMarkers(map_el,valid_shapes);
+
+    map_el.data("markers").forEach((m,i)=>{
+
+        m.addListener("click",function(e){
+
+            let shape = valid_shapes[i];
+
+            // Just Navigate
+            sessionStorage.shapeId = shape.shape_id;
+            $.mobile.navigate("#shape-profile-page")
+        })
+    });
 }
 
 export const ListPage = async() => {
@@ -78,7 +66,6 @@ export const ShapeProfilePage = async() => {
 
     $(".shape-profile-top").css({"background-image":`url(${shape.img})`})
     $("#shape-profile-page h1").html(shape.name)
-    $("#shape-profile-page .section-description").html(makeShapeProfileDescription(shape));
 
     let {result:locations} = await query({
         type:"locations_by_shape_id",
@@ -88,4 +75,44 @@ export const ShapeProfilePage = async() => {
 
     let map_el = await makeMap("#shape-profile-page .map");
     makeMarkers(map_el,locations);
+
+    map_el.data("markers").forEach((m,i)=>{
+
+        m.addListener("click",function(e){
+
+            $("#list-detail-modal")
+                .addClass("active")
+                .find(".profile-des-body")
+                .html(makeShapeDetailDescription(shape))
+        })
+    });
+}
+
+export const ChooseLocationPage = async() => {
+    let map_el = await makeMap("#choose-location-page .map");
+    makeMarkers(map_el,[]);
+}
+
+export const UserEditPage = async() => {
+    let {result:users} = await query({
+        type:"user_by_id",
+        params:[sessionStorage.userId]
+    });
+    let [user] = users;
+
+    $("#user-edit-page .body").html(makeEditUserForm(user));
+}
+
+
+export const ShapeEditPage = async() => {
+    let {result:shapes} = await query({
+        type:"shape_by_id",
+        params:[sessionStorage.shapeId]
+    });
+    let [shape] = shapes;
+
+    $("#shape-edit-page .body").html(makeEditShapeForm({
+        shape,
+        namespace:'shape-edit'
+    }));
 }
