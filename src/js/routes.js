@@ -91,6 +91,12 @@ export const ShapeProfilePage = async() => {
 export const ChooseLocationPage = async() => {
     let map_el = await makeMap("#choose-location-page .map");
     makeMarkers(map_el,[]);
+    map_el.data("map").addListener("click",function(e){
+        console.log(e)
+        $("#location-lat").val(e.latLng.lat());
+        $("#location-lng").val(e.latLng.lng());
+        makeMarkers(map_el,[e.latLng]);
+    })
 }
 
 export const UserEditPage = async() => {
@@ -103,6 +109,16 @@ export const UserEditPage = async() => {
     $("#user-edit-page .body").html(makeEditUserForm(user));
 }
 
+export const ShapeAddPage = async() => {
+    $("#shape-add-page .body").html(makeEditShapeForm({
+        shape:{
+            name:'',
+            type:'',
+            description:'',
+        },
+        namespace:'shape-add'
+    }));
+}
 
 export const ShapeEditPage = async() => {
     let {result:shapes} = await query({

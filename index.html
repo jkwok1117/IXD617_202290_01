@@ -67,15 +67,19 @@
             <form class="form" id="signup-form" data-ajax="false">
                 <div class="form-control">
                     <!-- <label class="form-label" for="signup-username">Username</label> -->
-                    <input class="form-input" type="text" id="signup-username" data-role="none" placeholder="Insert Username">
+                    <input class="form-input" type="text" id="signup-username" data-role="none" placeholder="Insert Username" required>
+                </div>
+                <div class="form-control">
+                    <!-- <label class="form-label" for="signup-username">Username</label> -->
+                    <input class="form-input" type="email" id="signup-email" data-role="none" placeholder="Insert Email" required>
                 </div>
                 <div class="form-control">
                     <!-- <label class="form-label" for="signup-password">Type a Password</label> -->
-                    <input class="form-input" type="password" id="signup-password" data-role="none" placeholder="Insert Password">
+                    <input class="form-input" type="password" id="signup-password" data-role="none" placeholder="Insert Password" required>
                 </div>
                 <div class="form-control">
                     <!-- <label class="form-label" for="signup-confirm">Confirm Password</label> -->
-                    <input class="form-input" type="password" id="signup-confirm" data-role="none" placeholder="Confirm Password">
+                    <input class="form-input" type="password" id="signup-confirm" data-role="none" placeholder="Confirm Password" required>
                 </div>
                 <div class="form-control">
                     <input type="submit" class="form-button" value="Sign Up" data-role="none">
@@ -114,7 +118,7 @@
             <ul>
                 <li class="flex-stretch"></li>
                 <li class="flex-stretch"></li>
-                <li class="shape-list-icon" data-activate="#shape-add-modal"><img src="images/icons/add.svg" style="width: 25px;"></li>
+                <li class="shape-list-icon"><a href="#shape-add-page"><img src="images/icons/add.svg" style="width: 25px;"></a></li>
             </ul>
         </header>
         <div data-role="main">
@@ -208,7 +212,7 @@
             <div class="flex-stretch"></div>
             
             <div class="form-control">
-                <input class="form-button" type="submit" data-role="none" value="Submit">
+                <input class="form-button" style="margin-top: 25em;" type="submit" data-role="none" value="Submit">
             </div>
         </form>
     </section>
@@ -273,6 +277,8 @@
             </ul>
         </header>
         <div data-role="main">
+            <input type="hidden" id="location-lat">
+            <input type="hidden" id="location-lag">
             <div class="map"></div>
         </div>
     </section>
@@ -320,6 +326,27 @@
             </div>
         </div>
     </div>
+
+
+
+    <section data-role="page" id="shape-add-page">
+        <header data-role="header">
+            <h1>Add New Shape</h1>
+            <ul class="shape-profile-head">
+                <li><a href="#" data-rel="back">&#60;</a></li>
+                <li class="flex-stretch"></li>
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <form data-role="main" data-ajax="false" id="shape-add-form" class="padded display-flex flex-column full overscroll">
+            <div class="body"></div>
+            <div class="flex-stretch"></div>
+            
+            <div class="form-control">
+                <input class="form-button" style="margin-top: 5em;" type="submit" data-role="none" value="Submit">
+            </div>
+        </form>
+    </section>
 
     <!-- SHAPE DETAIL PAGE -->
 
@@ -425,6 +452,11 @@
                             <li class="flex-stretch"></li>
                             <li data-deactivate="#setting-modal-drawer"><a href="#user-edit-page" style="color: var(--color-neutral-dark);">&#62;</a></li>
                         </div>
+                        <div style="display:flex;">
+                            <li data-deactivate="#setting-modal-drawer"><a href="#password-edit-page" style="color: var(--color-neutral-dark);">Edit Password</a></li>
+                            <li class="flex-stretch"></li>
+                            <li data-deactivate="#setting-modal-drawer"><a href="#password-edit-page" style="color: var(--color-neutral-dark);">&#62;</a></li>
+                        </div>
                         <br>
                         <li class="logout"><a href="#" class="js-logout" data-deactivate="#setting-modal-drawer">Log out</a></li>
                     </ul>
@@ -450,4 +482,31 @@
                     <input class="form-button" style="margin-top: 5em;" type="submit" data-role="none" value="Submit">
                 </div>
             </form>
-        </section>    
+        </section>
+
+        <!-- PASSWORD EDIT PAGE -->
+    <section data-role="page" id="password-edit-page">
+        <header data-role="header">
+            <h1>Edit Password</h1>
+            <ul class="shape-profile-head">
+                <li><a href="#" data-rel="back">&#60;</a></li>
+                <li class="flex-stretch"></li>
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <form data-role="main" data-ajax="false" id="password-edit-form" class="padded display-flex flex-column full overscroll">
+            <div class="body">
+                <div class="form-control">
+                    <label class="form-label" for="password-edit-password">New Password</label>
+                    <input class="form-input" type="password" id="password-edit-password" data-role="none" placeholder="Type a new password">
+                </div>
+                <div class="form-control">
+                    <label class="form-label" for="password-edit-confirm">Confirm New Password</label>
+                    <input class="form-input" type="password" id="password-edit-confirm" data-role="none" placeholder="Type the same password">
+                </div>
+                <div class="form-control">
+                    <input class="form-button" style="margin-top: 30em;" type="submit" data-role="none" value="Submit">
+                </div>
+            </div>
+        </form>
+    </section>

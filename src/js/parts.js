@@ -104,14 +104,6 @@ export const makeEditShapeForm = ({shape,namespace}) => {
             placeholder: "Type a Type",
             value: shape.type
         })}
-        ${FormControlInput({
-            namespace,
-            name: "date",
-            displayname: "Date",
-            type: "text",
-            placeholder: "Type a Date",
-            value: shape.date
-        })}
         ${FormControlTextarea({
             namespace,
             name: "description",

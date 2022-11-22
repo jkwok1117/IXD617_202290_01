@@ -95,6 +95,125 @@ function makeStatement($data) {
             ORDER BY l.shape_id, l.date_create DESC
             ", $params);
 
+        /* INSERT */
+        
+        case "insert_user":
+            $result = makeQuery($conn, "SELECT `id`
+            FROM `track_users` 
+            WHERE `username`=? OR `email`=?
+            ", [$params[0],$params[1]], false);
+            if (count($result['result']) > 0)
+                return ["error"=>"Username or Email already exists"];
+
+            $result = makeQuery($conn, "INSERT INTO
+            `track_users`
+            (
+                `username`,
+                `email`,
+                `password`,
+                `img`,
+                `date_create`
+            )
+            VALUES
+            (
+                ?,
+                ?,
+                md5(?),
+                'https://via.placeholder.com/400/?text=USER',
+                NOW()
+            )
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["id" => $conn->lastInsertId()];
+
+        case "insert_shape":
+            $result = makeQuery($conn, "INSERT INTO
+            `track_shapes`
+            (
+                `user_id`,
+                `name`,
+                `type`,
+                `description`,
+                `img`,
+                `date_create`
+            )
+            VALUES
+            (
+                ?,
+                ?,
+                ?,
+                ?,
+                'https://via.placeholder.com/400/?text=SHAPE',
+                NOW()
+            )
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
+
+
+
+
+        /* UPDATE */ 
+        case "update_user":
+            $result = makeQuery($conn,"UPDATE
+            `track_users`
+            SET
+                `name` = ?,
+                `username` = ?,
+                `email` = ?
+            WHERE `id` = ?
+            ",$params,false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
+            
+        case "update_password":
+            $result = makeQuery($conn,"UPDATE
+            `track_users`
+            SET
+                `password` = md5(?)
+            WHERE `id` = ?
+            ",$params,false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
+
+        case "update_shape":
+            $result = makeQuery($conn,"UPDATE
+            `track_shapes`
+            SET
+                `name` = ?,
+                `type` = ?,
+                `description` = ?
+            WHERE `id` = ?
+            ",$params,false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
+        /* DELETE */ 
+        case "delete_shape":
+            $result = makeQuery($conn,"DELETE FROM
+            `track_shapes`
+            WHERE `id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
+
+        case "delete_location":
+            $result = makeQuery($conn,"DELETE FROM
+            `track_locations`
+            WHERE `id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
 
 
 

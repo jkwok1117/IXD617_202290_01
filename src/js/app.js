@@ -1,5 +1,6 @@
-import { checkUserEditForm } from "./form.js";
-import { ShapeProfilePage, ListPage, MapPage, UserProfilePage, ChooseLocationPage, UserEditPage, ShapeEditPage } from "./routes.js";
+import { checkPasswordEditForm, checkShapeAddForm, checkShapeDeleteForm, checkShapeEditForm, checkSignupForm, checkUserEditForm } from "./form.js";
+import { query } from "./functions.js";
+import { ShapeProfilePage, ListPage, MapPage, UserProfilePage, ChooseLocationPage, UserEditPage, ShapeEditPage, ShapeAddPage } from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
 
 // Document Ready
@@ -20,6 +21,7 @@ $(() => {
             case "user-edit-page": UserEditPage(); break;
 
             case "shape-profile-page": ShapeProfilePage(); break;
+            case "shape-add-page": ShapeAddPage(); break;
             case "shape-edit-page": ShapeEditPage(); break;
 
             case "choose-location-page": ChooseLocationPage(); break;
@@ -33,13 +35,25 @@ $(() => {
         e.preventDefault();
         checkSigninForm();
     })
+    .on("submit", "#signup-form", function(e) {
+        e.preventDefault();
+        checkSignupForm();
+    })
     .on("submit", "#user-edit-form", function(e) {
         e.preventDefault();
         checkUserEditForm();
     })
+    .on("submit", "#password-edit-form", function(e) {
+        e.preventDefault();
+        checkPasswordEditForm();
+    })
     .on("submit", "#shape-edit-form", function(e) {
         e.preventDefault();
-        checkUserEditForm();
+        checkShapeEditForm();
+    })
+    .on("submit", "#shape-add-form", function(e) {
+        e.preventDefault();
+        checkShapeAddForm();
     })
 
 
@@ -53,6 +67,9 @@ $(() => {
         let id = $(this).data("id");
 
         sessionStorage.shapeId = id;
+    })
+    .on("click", ".js-shape-delete", function(e) {
+        checkShapeDeleteForm();
     })
 
     .on("click", ".nav-link", function(e) {
