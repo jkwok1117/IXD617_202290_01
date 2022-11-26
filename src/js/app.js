@@ -100,3 +100,21 @@ $(() => {
             .siblings().removeClass("active");
     })
 });
+
+
+// edit password visible
+var signinpass = document.getElementById('signin-password');
+var newpass = document.getElementById('password-edit-password');
+var confirmpass = document.getElementById('password-edit-confirm');
+
+document.getElementById('showPassword').onclick = function() {
+    if (this.checked) {   
+        signinpass.type = 'text';               
+        newpass.type = 'text';              
+        confirmpass.type = 'text';              
+    } else {       
+        signinpass.type = 'password';                        
+        newpass.type = 'password';         
+        confirmpass.type = 'password';              
+    }
+};

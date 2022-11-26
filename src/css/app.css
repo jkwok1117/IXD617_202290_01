@@ -715,7 +715,6 @@ select {
 /* PROFILE SETTINGS */
 .profile-head {
     line-height: 3rem;
-    height: var(--header-height);
     position:relative;
     overflow:hidden;
     background-color:white;

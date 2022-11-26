@@ -49,6 +49,10 @@
                     <input class="form-input" type="password" id="signin-password" data-role="none" placeholder="Password">
                 </div>
                 <div class="form-control">
+                    <input type="checkbox" id="showPassword" data-role="none">
+                    <label for="show password" style="color: var(--color-neutral-dark); font-size: 1em;">Show Password</label>
+                </div>
+                <div class="form-control">
                     <input type="submit" class="form-button" value="Login" data-role="none">
                 </div>
                 <div class="form-control" style="text-align:center; font-size: 0.7em">
@@ -348,6 +352,106 @@
         </form>
     </section>
 
+
+
+
+        <!-- USER PROFILE PAGE -->
+        <section data-role="page" id="user-profile-page">
+            <div data-role="main"></div>
+            <footer data-role="footer">
+                <ul>
+                    <li class="nav-icon" data-activateone=".nav-icon:nth-child(1)"><a href="#list-page"><img src="images/icons/list.svg"></a></li>
+                    <li class="nav-icon" data-activateone=".nav-icon:nth-child(2)"><a href="#map-page"><img src="images/icons/map.svg"></a></li>
+                    <li class="nav-icon" data-activateone=".nav-icon:nth-child(3)"><a href="#user-profile-page"><img src="images/icons/profile.svg"></a></li>
+                </ul>
+            </footer>
+        </section>
+
+
+
+        <!-- SETTING PAGE -->
+        <div id="setting-modal-drawer" class="modal">
+            <div class="modal-back" data-deactivate="#setting-modal-drawer"></div>
+            <div class="modal-drawer bottom" style="height: auto; border-radius: 10px 10px 0 0;">
+                <div class="profile-head">
+                    <h1>Settings</h1>
+                    <ul>
+                        <li data-deactivate="#setting-modal-drawer" style="transform: rotate(270deg);">&#8249;</li>
+                        <li class="flex-stretch"></li>
+                    </ul>
+                </div>
+                <div class="profile-body">
+                    <ul>
+                        <div style="display:flex;">
+                            <li data-deactivate="#setting-modal-drawer"><a href="#user-edit-page" style="color: var(--color-neutral-dark);">Edit Profile</a></li>
+                            <li class="flex-stretch"></li>
+                            <li data-deactivate="#setting-modal-drawer"><a href="#user-edit-page" style="color: var(--color-neutral-dark);">&#62;</a></li>
+                        </div>
+                        <div style="display:flex;">
+                            <li data-deactivate="#setting-modal-drawer"><a href="#password-edit-page" style="color: var(--color-neutral-dark);">Edit Password</a></li>
+                            <li class="flex-stretch"></li>
+                            <li data-deactivate="#setting-modal-drawer"><a href="#password-edit-page" style="color: var(--color-neutral-dark);">&#62;</a></li>
+                        </div>
+                        <br>
+                        <li class="logout"><a href="#" class="js-logout" data-deactivate="#setting-modal-drawer">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- USER EDIT PAGE -->
+        <section data-role="page" id="user-edit-page">
+            <header data-role="header">
+                <h1>Edit User</h1>
+                <ul class="shape-profile-head">
+                    <li><a href="#" data-rel="back">&#60;</a></li>
+                    <li class="flex-stretch"></li>
+                    <li class="flex-stretch"></li>
+                </ul>
+            </header>
+            <form data-role="main" data-ajax="false" id="user-edit-form" class="padded display-flex flex-column full overscroll">
+                <div class="body"></div>
+                <div class="flex-stretch"></div>
+                
+                <div class="form-control">
+                    <input class="form-button" style="margin-top: 5em;" type="submit" data-role="none" value="Submit">
+                </div>
+            </form>
+        </section>
+
+        <!-- PASSWORD EDIT PAGE -->
+    <section data-role="page" id="password-edit-page">
+        <header data-role="header">
+            <h1>Edit Password</h1>
+            <ul class="shape-profile-head">
+                <li><a href="#" data-rel="back">&#60;</a></li>
+                <li class="flex-stretch"></li>
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <form data-role="main" data-ajax="false" id="password-edit-form" class="padded display-flex flex-column full overscroll">
+            <div class="body">
+                <div class="form-control">
+                    <label class="form-label" for="password-edit-password">New Password</label>
+                    <input class="form-input" type="password" id="password-edit-password" data-role="none" placeholder="New password">
+                </div>
+                <div class="form-control">
+                    <label class="form-label" for="password-edit-confirm">Confirm New Password</label>
+                    <input class="form-input" type="password" id="password-edit-confirm" data-role="none" placeholder="Confirm New password">
+                </div>
+                <div class="form-control">
+                    <input type="checkbox" id="showPassword" data-role="none">
+                    <label for="show password" style="color: var(--color-neutral-dark); font-size: 1em;">Show Password</label>
+                </div>
+                <div class="form-control">
+                    <input class="form-button" style="margin-top: 28em;" type="submit" data-role="none" value="Submit">
+                </div>
+            </div>
+        </form>
+    </section>
+    
+    
+    
     <!-- SHAPE DETAIL PAGE -->
 
     <!-- <div id="list-detail-modal" class="modal">
@@ -418,95 +522,3 @@
             </div>
         </div>
     </div> -->
-
-
-        <!-- USER PROFILE PAGE -->
-        <section data-role="page" id="user-profile-page">
-            <div data-role="main"></div>
-            <footer data-role="footer">
-                <ul>
-                    <li class="nav-icon" data-activateone=".nav-icon:nth-child(1)"><a href="#list-page"><img src="images/icons/list.svg"></a></li>
-                    <li class="nav-icon" data-activateone=".nav-icon:nth-child(2)"><a href="#map-page"><img src="images/icons/map.svg"></a></li>
-                    <li class="nav-icon" data-activateone=".nav-icon:nth-child(3)"><a href="#user-profile-page"><img src="images/icons/profile.svg"></a></li>
-                </ul>
-            </footer>
-        </section>
-
-
-
-        <!-- SETTING PAGE -->
-        <div id="setting-modal-drawer" class="modal">
-            <div class="modal-back" data-deactivate="#setting-modal-drawer"></div>
-            <div class="modal-drawer bottom" style="height: 25%; border-radius: 10px 10px 0 0;">
-                <div class="profile-head">
-                    <h1>Settings</h1>
-                    <ul>
-                        <li data-deactivate="#setting-modal-drawer" style="transform: rotate(270deg);">&#8249;</li>
-                        <li class="flex-stretch"></li>
-                    </ul>
-                </div>
-                <div class="profile-body">
-                    <ul>
-                        <div style="display:flex;">
-                            <li data-deactivate="#setting-modal-drawer"><a href="#user-edit-page" style="color: var(--color-neutral-dark);">Edit Profile</a></li>
-                            <li class="flex-stretch"></li>
-                            <li data-deactivate="#setting-modal-drawer"><a href="#user-edit-page" style="color: var(--color-neutral-dark);">&#62;</a></li>
-                        </div>
-                        <div style="display:flex;">
-                            <li data-deactivate="#setting-modal-drawer"><a href="#password-edit-page" style="color: var(--color-neutral-dark);">Edit Password</a></li>
-                            <li class="flex-stretch"></li>
-                            <li data-deactivate="#setting-modal-drawer"><a href="#password-edit-page" style="color: var(--color-neutral-dark);">&#62;</a></li>
-                        </div>
-                        <br>
-                        <li class="logout"><a href="#" class="js-logout" data-deactivate="#setting-modal-drawer">Log out</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- USER EDIT PAGE -->
-        <section data-role="page" id="user-edit-page">
-            <header data-role="header">
-                <h1>Edit User</h1>
-                <ul class="shape-profile-head">
-                    <li><a href="#" data-rel="back">&#60;</a></li>
-                    <li class="flex-stretch"></li>
-                    <li class="flex-stretch"></li>
-                </ul>
-            </header>
-            <form data-role="main" data-ajax="false" id="user-edit-form" class="padded display-flex flex-column full overscroll">
-                <div class="body"></div>
-                <div class="flex-stretch"></div>
-                
-                <div class="form-control">
-                    <input class="form-button" style="margin-top: 5em;" type="submit" data-role="none" value="Submit">
-                </div>
-            </form>
-        </section>
-
-        <!-- PASSWORD EDIT PAGE -->
-    <section data-role="page" id="password-edit-page">
-        <header data-role="header">
-            <h1>Edit Password</h1>
-            <ul class="shape-profile-head">
-                <li><a href="#" data-rel="back">&#60;</a></li>
-                <li class="flex-stretch"></li>
-                <li class="flex-stretch"></li>
-            </ul>
-        </header>
-        <form data-role="main" data-ajax="false" id="password-edit-form" class="padded display-flex flex-column full overscroll">
-            <div class="body">
-                <div class="form-control">
-                    <label class="form-label" for="password-edit-password">New Password</label>
-                    <input class="form-input" type="password" id="password-edit-password" data-role="none" placeholder="Type a new password">
-                </div>
-                <div class="form-control">
-                    <label class="form-label" for="password-edit-confirm">Confirm New Password</label>
-                    <input class="form-input" type="password" id="password-edit-confirm" data-role="none" placeholder="Type the same password">
-                </div>
-                <div class="form-control">
-                    <input class="form-button" style="margin-top: 30em;" type="submit" data-role="none" value="Submit">
-                </div>
-            </div>
-        </form>
-    </section>
