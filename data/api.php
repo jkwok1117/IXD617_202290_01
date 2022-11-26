@@ -101,7 +101,7 @@ function makeStatement($data) {
             $result = makeQuery($conn, "SELECT `id`
             FROM `track_users` 
             WHERE `username`=? OR `email`=?
-            ", [$params[0],$params[1]], false);
+            ", [$params[0],$params[1]]);
             if (count($result['result']) > 0)
                 return ["error"=>"Username or Email already exists"];
 
@@ -152,6 +152,33 @@ function makeStatement($data) {
             if (isset($result['error'])) return $result;
             return ["result"=>"Success"];
 
+
+        case "insert_location":
+            $result = makeQuery($conn, "INSERT INTO
+            `track_locations`
+            (
+                `shape_id`,
+                `lat`,
+                `lng`,
+                `description`,
+                `photo`,
+                `icon`,
+                `date_create`
+            )
+            VALUES
+            (
+                ?,
+                ?,
+                ?,
+                ?,
+                'https://via.placeholder.com/400/?text=PHOTO',
+                'https://via.placeholder.com/400/?text=ICON',
+                NOW()
+            )
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
 
 
 

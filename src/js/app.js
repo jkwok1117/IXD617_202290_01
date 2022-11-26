@@ -1,6 +1,6 @@
-import { checkPasswordEditForm, checkShapeAddForm, checkShapeDeleteForm, checkShapeEditForm, checkSignupForm, checkUserEditForm } from "./form.js";
+import { checkLocationAddForm, checkPasswordEditForm, checkShapeAddForm, checkShapeDeleteForm, checkShapeEditForm, checkSignupForm, checkUserEditForm } from "./form.js";
 import { query } from "./functions.js";
-import { ShapeProfilePage, ListPage, MapPage, UserProfilePage, ChooseLocationPage, UserEditPage, ShapeEditPage, ShapeAddPage } from "./routes.js";
+import { ShapeProfilePage, ListPage, MapPage, UserProfilePage, ChooseLocationPage, UserEditPage, ShapeEditPage, ShapeAddPage, ProfileAddPage } from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
 
 // Document Ready
@@ -23,6 +23,7 @@ $(() => {
             case "shape-profile-page": ShapeProfilePage(); break;
             case "shape-add-page": ShapeAddPage(); break;
             case "shape-edit-page": ShapeEditPage(); break;
+            case "shape-add-new": ProfileAddPage(); break;
 
             case "choose-location-page": ChooseLocationPage(); break;
 
@@ -70,6 +71,15 @@ $(() => {
     })
     .on("click", ".js-shape-delete", function(e) {
         checkShapeDeleteForm();
+    })
+    .on("click", ".js-choose-shape-for-location", function(e) {
+        $("#location-shape-id").val(sessionStorage.shapeId);
+        $("#location-back").val(-2);
+    })
+
+
+    .on("click", ".js-submit-location-add-form", function(e) {
+        checkLocationAddForm();
     })
 
     .on("click", ".nav-link", function(e) {

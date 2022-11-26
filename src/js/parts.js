@@ -43,7 +43,7 @@ export const makeShapeDetailDescription = ({name,type,date_create,img,descriptio
                 <ul class="des-head" >
                     <li data-deactivate="#list-detail-modal" style="transform: rotate(270deg);">&#8249;</li>
                     <li class="flex-stretch"></li>
-                    <li class="flex-stretch"></li>
+                    <li style="padding: 0.3em 0em;"><a href="#shape-edit-page"><img src="images/icons/edit.svg" style="width: 20px;"></a></li>
                 </ul>
     </div>
     <img class="preview-img" src="${img}">

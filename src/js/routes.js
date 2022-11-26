@@ -120,6 +120,17 @@ export const ShapeAddPage = async() => {
     }));
 }
 
+export const ProfileAddPage = async() => {
+    $("#shape-add-new .body").html(makeEditShapeForm({
+        shape:{
+            name:'',
+            type:'',
+            description:'',
+        },
+        namespace:'shape-add'
+    }));
+}
+
 export const ShapeEditPage = async() => {
     let {result:shapes} = await query({
         type:"shape_by_id",

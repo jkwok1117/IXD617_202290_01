@@ -69,6 +69,25 @@
             </div>
             <div class="flex-stretch"></div>
             <form class="form" id="signup-form" data-ajax="false">
+                <div class="warning1" 
+                style="display: none;
+                background-color: var(--color-primary-red);
+                border-radius: 0.4em;
+                color: var(--color-neutral-light);
+                padding: 1em;
+                text-align: center;">
+                    <p>Incorrect password.</p>
+                </div>
+                <div class="warning2" 
+                style="display: none;
+                background-color: var(--color-primary-red);
+                border-radius: 0.4em;
+                color: var(--color-neutral-light);
+                padding: 1em;
+                text-align: center;">
+                    <p>Username or email already registered.</p>
+                </div>
+                <h1>Create new account</h1>
                 <div class="form-control">
                     <!-- <label class="form-label" for="signup-username">Username</label> -->
                     <input class="form-input" type="text" id="signup-username" data-role="none" placeholder="Insert Username" required>
@@ -119,22 +138,12 @@
     <section data-role="page" id="list-page">
         <header data-role="header">
             <h1>Shape List</h1>
-            <ul>
-                <li class="flex-stretch"></li>
-                <li class="flex-stretch"></li>
-                <li class="shape-list-icon"><a href="#shape-add-page"><img src="images/icons/add.svg" style="width: 25px;"></a></li>
-            </ul>
         </header>
         <div data-role="main">
             <div class="shapelist"></div>
-                <!-- <div class="shapelist-item" data-activate="#list-add-modal"><img src="images/icons/square.svg"></div>
-                <div class="shapelist-item"><a href="#circle-profile-page"><img src="images/icons/circle.svg"></a></div>
-                <div class="shapelist-item"><a href="#triangle-profile-page"><img src="images/icons/triangle.svg"></a></div>
-                <div class="shapelist-item"><a href="#rectangle-profile-page"><img src="images/icons/rectangle.svg"></a></div>
-            
-                <div class="floater bottom right">
-                <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
-            </div> -->
+            <div class="floater bottom right" style="bottom: 2rem;" >
+                <a href="#shape-add-page" class="btn-circle"><img src="images/icons/add.svg" style="width: 27px;"></a>
+            </div>
         </div>
         <footer data-role="footer">
             <ul>
@@ -176,7 +185,7 @@
             <ul class="shape-profile-head">
                 <li><a href="#" data-rel="back">&#60;</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#shape-edit-page"><img src="images/icons/edit.svg" style="width: 20px;"></a></li>
+                <li><a href="#" class="js-shape-delete"><img src="images/icons/delete.svg" style="width: 22px;"></a></li>
             </ul>
         </header>
         <div data-role="main">
@@ -188,6 +197,10 @@
             <div class="shape-profile-bottom">
                 <div class="shape-profile-section section-map active">
                     <div class="map"></div>
+
+                    <div class="floater bottom right" style="bottom: 2rem;" >
+                        <a href="#choose-location-page" class="btn-circle js-choose-shape-for-location"><img src="images/icons/add.svg" style="width: 27px;"></a>
+                    </div>
                 </div>
 
                 <div id="list-detail-modal" class="modal">
@@ -196,7 +209,6 @@
                         <div class="profile-des-body"></div>
                     </div>
                 </div> 
-                <!-- <div class="shape-profile-section section-description"></div> -->
             </div>
         </div>
     </section>
@@ -229,43 +241,14 @@
                 <ul class="shape-profile-head">
                     <li><a href="#" data-rel="back">&#60;</a></li>
                     <li class="flex-stretch"></li>
-                    <li class="flex-stretch"></li>
+                    <li><a href="#choose-location-page">&#62;</a></li>
                 </ul>
             </header>
-            <div data-role="main">
-                <form class="form" id="new-shape-form">
-                    <br>
-                    <div class="form-control">
-                        <input class="form-edit-input" type="text" id="add-new-title" data-role="none" placeholder="Title">
-                    </div>
-                    <div class="form-control" style="margin: 2em 0;">
-                        <select name="shapes">
-                            <option value="" disabled selected hidden>Choose a Shape</option>
-                            <option value="square">Square</option>
-                            <option value="circle">Circle</option>
-                            <option value="triangle">Triangle</option>
-                            <option value="rectangle">Rectangle</option>
-                            <option value="pentagon">Pentagon</option>
-                        </select>
-                    </div>
-                    <div class="form-control" style="margin: 2em 0;">
-                        <input class="form-edit-input" type="text" id="add-new-category" data-role="none" placeholder="Category">
-                    </div>
-                    <div class="form-control" style="margin: 2em 0;">
-                        <input class="form-edit-input" type="date" id="add-new-date" data-role="none">
-                    </div>
-                    <div class="form-control" style="margin: 2em 0;">
-                        <input class="form-edit-input" type="text" id="add-new-description" data-role="none" placeholder="Description">
-                    </div>
-                    <div class="image-upload-box" style="margin-bottom: 5em;">
-                        <label for="file" style="height: 12em; line-height: 11.5em; font-weight: 500;">Upload New Image</label>
-                    </div>
-                    <div class="form-control">
-                        <a href="#choose-location-page"><input type="button" class="add-button" value="Next" data-role="none"></a>
-                    </div>
-                    <div class="form-control" style="margin-bottom: 2em;">
-                        <a href="#" data-rel="back"><input type="button" class="add-button" style=" background-color: var(--color-secondary-orange);" value="Cancel" data-role="none"></a>
-                    </div>
+                <form data-role="main" data-ajax="false" id="shape-add-form" class="padded display-flex flex-column full overscroll">
+                    <input type="hidden" id="location-shape-id">
+                    <input type="hidden" id="location-back" value="-2">
+                    <div class="body"></div>
+                    <div class="flex-stretch"></div>
                 </form>
             </div>
         </section>
@@ -282,10 +265,27 @@
         </header>
         <div data-role="main">
             <input type="hidden" id="location-lat">
-            <input type="hidden" id="location-lag">
+            <input type="hidden" id="location-lng">
             <div class="map"></div>
         </div>
     </section>
+
+        <!-- ADD SHAPE INFO PAGE -->
+        <section data-role="page" id="choose-description-page">
+            <header data-role="header">
+                <h1>Description of Shape</h1>
+                <ul class="shape-profile-head">
+                    <li><a href="#" data-rel="back">&#60;</a></li>
+                    <li class="flex-stretch"></li>
+                </ul>
+            </header>
+            <div data-role="main">
+                <div class="padded">
+                    <textarea class="form-input" rows="10" id="location-description"></textarea>
+                    <h1 class="form-button"><a href="#" style="color: white;" class="js-submit-location-add-form">Save</a></h1>
+                </div>
+            </div>
+        </section>
 
     <!-- SHAPE ADD PAGE -->
 
@@ -304,9 +304,6 @@
                     <br>
                     <div class="form-control">
                         <input class="form-edit-input" type="text" id="add-title" data-role="none" placeholder="Title">
-                    </div>
-                    <div class="form-control">
-                        <input class="form-edit-input" type="date" id="add-date" data-role="none">
                     </div>
                     <div class="form-control">
                         <input class="form-edit-input" type="text" id="add-shape" data-role="none" placeholder="Shape">
@@ -347,7 +344,7 @@
             <div class="flex-stretch"></div>
             
             <div class="form-control">
-                <input class="form-button" style="margin-top: 5em;" type="submit" data-role="none" value="Submit">
+                <input class="form-button" style="margin-top: 25em;" type="submit" data-role="none" value="Submit">
             </div>
         </form>
     </section>
@@ -414,7 +411,7 @@
                 <div class="flex-stretch"></div>
                 
                 <div class="form-control">
-                    <input class="form-button" style="margin-top: 5em;" type="submit" data-role="none" value="Submit">
+                    <input class="form-button" style="margin-top: 26em;" type="submit" data-role="none" value="Submit">
                 </div>
             </form>
         </section>
