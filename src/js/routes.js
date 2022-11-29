@@ -109,6 +109,20 @@ export const UserEditPage = async() => {
     $("#user-edit-page .body").html(makeEditUserForm(user));
 }
 
+export const UserEditPhotoPage = async() => {
+    let {result:users} = await query({
+        type:"user_by_id",
+        params:[sessionStorage.userId]
+    });
+    let [user] = users;
+
+    $("#user-edit-photo-page .photo-body").css({
+        "background-image":`url('${user.img}')`
+    });
+}
+
+
+
 export const ShapeAddPage = async() => {
     $("#shape-add-page .body").html(makeEditShapeForm({
         shape:{

@@ -50,7 +50,7 @@ export const makeShapeDetailDescription = ({name,type,date_create,img,descriptio
     <div class="detail-info">
         <ul>
             <li><img class="list-icon" src="images/icons/date.svg">${date_create}</li><br>
-            <li><img class="list-icon" src="images/icons/location.svg">9th Ave, San Francisco, CA</li><br>
+            <li><img class="list-icon" src="images/icons/type.svg">${type}</li><br>
             <li><span style="font-weight:500; color:var(--color-primary-red);">Description: </span><br>${description}</li>
         </ul>
     </div>`;

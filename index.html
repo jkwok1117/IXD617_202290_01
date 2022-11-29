@@ -120,9 +120,9 @@
     <section data-role="page" id="map-page">
         <div data-role="main">
             <div class="map"></div>
-            <div class="floater bottom right">
+            <!-- <div class="floater bottom right">
                 <a href="#shape-add-new" class="btn-circle"><img src="images/icons/add.svg" style="width: 25px; vertical-align: middle; padding-bottom: 4px;"></a>
-            </div>
+            </div> -->
         </div>
         <footer data-role="footer">
             <ul>
@@ -228,7 +228,7 @@
             <div class="flex-stretch"></div>
             
             <div class="form-control">
-                <input class="form-button" style="margin-top: 25em;" type="submit" data-role="none" value="Submit">
+                <input class="form-button" type="submit" data-role="none" value="Submit">
             </div>
         </form>
     </section>
@@ -244,7 +244,7 @@
                     <li><a href="#choose-location-page">&#62;</a></li>
                 </ul>
             </header>
-                <form data-role="main" data-ajax="false" id="shape-add-form" class="padded display-flex flex-column full overscroll">
+                <form data-role="main" data-ajax="false" id="profile-add-form" class="padded display-flex flex-column full overscroll">
                     <input type="hidden" id="location-shape-id">
                     <input type="hidden" id="location-back" value="-2">
                     <div class="body"></div>
@@ -260,18 +260,20 @@
             <ul class="shape-profile-head">
                 <li><a href="#" data-rel="back">&#60;</a></li>
                 <li class="flex-stretch"></li>
-                <li><a href="#choose-description-page">&#62;</a></li>
+                <li class="flex-stretch"></li>
             </ul>
         </header>
         <div data-role="main">
             <input type="hidden" id="location-lat">
             <input type="hidden" id="location-lng">
             <div class="map"></div>
+            <h1 class="form-button" style="position:relative; top: 40em; width: 90%; margin: 0 1em;">
+                <a href="#" style="color: white;" class="js-submit-location-add-form">Save</a></h1>
         </div>
     </section>
 
         <!-- ADD SHAPE INFO PAGE -->
-        <section data-role="page" id="choose-description-page">
+        <!-- <section data-role="page" id="choose-description-page">
             <header data-role="header">
                 <h1>Description of Shape</h1>
                 <ul class="shape-profile-head">
@@ -285,7 +287,7 @@
                     <h1 class="form-button"><a href="#" style="color: white;" class="js-submit-location-add-form">Save</a></h1>
                 </div>
             </div>
-        </section>
+        </section> -->
 
     <!-- SHAPE ADD PAGE -->
 
@@ -344,7 +346,7 @@
             <div class="flex-stretch"></div>
             
             <div class="form-control">
-                <input class="form-button" style="margin-top: 25em;" type="submit" data-role="none" value="Submit">
+                <input class="form-button" type="submit" data-role="none" value="Submit">
             </div>
         </form>
     </section>
@@ -385,6 +387,11 @@
                             <li data-deactivate="#setting-modal-drawer"><a href="#user-edit-page" style="color: var(--color-neutral-dark);">&#62;</a></li>
                         </div>
                         <div style="display:flex;">
+                            <li data-deactivate="#setting-modal-drawer"><a href="#user-edit-photo-page" style="color: var(--color-neutral-dark);">Edit Profile Photo</a></li>
+                            <li class="flex-stretch"></li>
+                            <li data-deactivate="#setting-modal-drawer"><a href="#user-edit-photo-page" style="color: var(--color-neutral-dark);">&#62;</a></li>
+                        </div>
+                        <div style="display:flex;">
                             <li data-deactivate="#setting-modal-drawer"><a href="#password-edit-page" style="color: var(--color-neutral-dark);">Edit Password</a></li>
                             <li class="flex-stretch"></li>
                             <li data-deactivate="#setting-modal-drawer"><a href="#password-edit-page" style="color: var(--color-neutral-dark);">&#62;</a></li>
@@ -411,7 +418,7 @@
                 <div class="flex-stretch"></div>
                 
                 <div class="form-control">
-                    <input class="form-button" style="margin-top: 26em;" type="submit" data-role="none" value="Submit">
+                    <input class="form-button" type="submit" data-role="none" value="Submit">
                 </div>
             </form>
         </section>
@@ -440,15 +447,39 @@
                     <input type="checkbox" id="showPassword" data-role="none">
                     <label for="show password" style="color: var(--color-neutral-dark); font-size: 1em;">Show Password</label>
                 </div>
-                <div class="form-control">
-                    <input class="form-button" style="margin-top: 28em;" type="submit" data-role="none" value="Submit">
-                </div>
+            </div>
+            <div class="form-control">
+                    <input class="form-button" type="submit" data-role="none" value="Submit">
             </div>
         </form>
     </section>
     
+    <!-- USER EDIT PHOTO PAGE -->
+    <section data-role="page" id="user-edit-photo-page">
+        <header data-role="header">
+            <h1>Edit User Photo</h1>
+            <ul class="shape-profile-head">
+                <li><a href="#" data-rel="back">&#60;</a></li>
+                <li class="flex-stretch"></li>
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <form data-role="main" data-ajax="false" id="user-edit-photo-form" class="padded display-flex flex-column full overscroll">
+            <input type="hidden" id="user-edit-photo-image">
+            <label class="photo-body imagepicker replace">
+                <input type="file" id="user-edit-photo-input" data-role="none" class="hidden">
+            </label>
+            <p class="upload-text">Tap the image to upload new profile picture</p>
+            <div class="form-control">
+                <h1 class="form-button"><a href="#" style="color: white;" class="js-submit-user-edit-photo-form">Submit</a></h1>
+            </div>
+        </form>
+    </section>
     
-    
+
+
+
+
     <!-- SHAPE DETAIL PAGE -->
 
     <!-- <div id="list-detail-modal" class="modal">

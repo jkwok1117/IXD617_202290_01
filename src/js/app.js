@@ -1,6 +1,6 @@
-import { checkLocationAddForm, checkPasswordEditForm, checkShapeAddForm, checkShapeDeleteForm, checkShapeEditForm, checkSignupForm, checkUserEditForm } from "./form.js";
-import { query } from "./functions.js";
-import { ShapeProfilePage, ListPage, MapPage, UserProfilePage, ChooseLocationPage, UserEditPage, ShapeEditPage, ShapeAddPage, ProfileAddPage } from "./routes.js";
+import { checkLocationAddForm, checkPasswordEditForm, checkShapeAddForm, checkShapeDeleteForm, checkShapeEditForm, checkSignupForm, checkUserEditForm, checkUserEditPhotoForm } from "./form.js";
+import { checkUpload, query } from "./functions.js";
+import { ShapeProfilePage, ListPage, MapPage, UserProfilePage, ChooseLocationPage, UserEditPage, ShapeEditPage, ShapeAddPage, ProfileAddPage, UserEditPhotoPage } from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
 
 // Document Ready
@@ -19,6 +19,7 @@ $(() => {
 
             case "user-profile-page": UserProfilePage(); break;
             case "user-edit-page": UserEditPage(); break;
+            case "user-edit-photo-page": UserEditPhotoPage(); break;
 
             case "shape-profile-page": ShapeProfilePage(); break;
             case "shape-add-page": ShapeAddPage(); break;
@@ -59,6 +60,21 @@ $(() => {
 
 
 
+
+
+    .on("change", ".imagepicker input", function(e) {
+        checkUpload(this.files[0])
+        .then((d) => {
+            console.log(d);
+            let filename = `uploads/${d.result}`;
+            $(this).parent().prev().val(filename);
+            $(this).parent().css({
+                "background-image": `url('${filename}')`
+            })
+        })
+    })
+
+
     .on("click", ".js-logout", function(e) {
         sessionStorage.removeItem("userId");
         checkUserId();
@@ -80,6 +96,9 @@ $(() => {
 
     .on("click", ".js-submit-location-add-form", function(e) {
         checkLocationAddForm();
+    })
+    .on("click", ".js-submit-user-edit-photo-form", function(e) {
+        checkUserEditPhotoForm();
     })
 
     .on("click", ".nav-link", function(e) {

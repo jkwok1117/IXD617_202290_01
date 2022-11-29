@@ -61,7 +61,7 @@ export const checkPasswordEditForm = () => {
     }
 
     query({
-        type: 'update_user',
+        type: 'update_password',
         params: [
             password,
             sessionStorage.userId
@@ -75,6 +75,23 @@ export const checkPasswordEditForm = () => {
     })
 }
 
+export const checkUserEditPhotoForm = () => {
+    let photo = $("#user-edit-photo-image").val();
+
+    query({
+        type: 'update_user_photo',
+        params: [
+            photo,
+            sessionStorage.userId
+        ]
+    }).then((data)=>{
+        if (data.error) {
+            throw(data.error);
+        } else {
+            window.history.go(-1);
+        }
+    })
+}
 
 
 
@@ -140,13 +157,12 @@ export const checkLocationAddForm = () => {
     let shapeid = $("#location-shape-id").val();
     let lat = $("#location-lat").val();
     let lng = $("#location-lng").val();
-    let description = $("#location-description").val();
 
     let back = +$("#location-back").val();
 
     query({
         type:"insert_location",
-        params:[shapeid,lat,lng,description]
+        params:[shapeid,lat,lng]
     }).then((data)=>{
         if (data.error) {
             throw(data.error);

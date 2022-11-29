@@ -125,7 +125,7 @@ p {
     display: block;
 }
 
-/* WARNING */ */
+/* WARNING */
 
 /* .warning {
     background-color: var(--color-primary-red);
@@ -156,6 +156,7 @@ p {
 .padded { padding:1em; }
 .full { height:100%; }
 
+.hidden {display: none;}
 
 .logo-box {
     border-style: solid;
@@ -516,9 +517,6 @@ h1 {
     font-size: 1em;
     font-weight: 500;
 }
-.image-upload-box {
-    margin: 2em 0;
-}
 .image-upload-box label {
     display:inline-block;
     width:100%;
@@ -711,6 +709,31 @@ select {
     margin-top: 0.5em;
     margin-bottom: 0.2em;
 }
+
+/* USER PHOTO EDIT */
+
+.photo-body {
+    height: 42%;
+    width: 90%;
+    margin: auto;
+    margin-top: 5em;
+}
+
+#user-edit-photo-page .photo-body {
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+}
+.upload-text {
+    margin-bottom: 10em;
+    padding: 1em;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+
 
 /* PROFILE SETTINGS */
 .profile-head {
