@@ -117,6 +117,7 @@ export const checkShapeEditPhotoForm = () => {
 export const checkShapeAddForm = () => {
     let name = $("#shape-add-name").val();
     let type = $("#shape-add-type").val();
+    let color = $("#shape-add-color").val();
     let description = $("#shape-add-description").val();
 
     query({
@@ -125,6 +126,7 @@ export const checkShapeAddForm = () => {
             sessionStorage.userId,
             name,
             type,
+            color,
             description
         ]
     }).then((data)=>{
@@ -139,6 +141,7 @@ export const checkShapeAddForm = () => {
 export const checkShapeEditForm = () => {
     let name = $("#shape-edit-name").val();
     let type = $("#shape-edit-type").val();
+    let color = $("#shape-edit-color").val();
     let description = $("#shape-edit-description").val();
 
     query({
@@ -146,6 +149,7 @@ export const checkShapeEditForm = () => {
         params: [
             name,
             type,
+            color,
             description,
             sessionStorage.shapeId
         ]

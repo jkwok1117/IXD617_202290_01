@@ -49,7 +49,7 @@ export const makeUserProfilePage = ({name,email,username,img})=>`
 </div>
 `
 
-export const makeShapeDetailDescription = ({name,type,date_create,img,description}) => {
+export const makeShapeDetailDescription = ({name,type,color,date_create,img,description}) => {
     return `
     <div class="modal-head">
                 <h1>Shape Info</h1>
@@ -63,7 +63,10 @@ export const makeShapeDetailDescription = ({name,type,date_create,img,descriptio
     <div class="detail-info">
         <ul>
             <li><img class="list-icon" src="images/icons/date.svg">${date_create}</li><br>
-            <li><img class="list-icon" src="images/icons/type.svg">${type}</li><br>
+            <div class="shape-info">
+            <li><img class="list-icon" src="images/icons/type.svg">${type}</li>
+            <li><img class="list-icon" src="images/icons/color.svg">${color}</li>
+            </div><br>
             <li><span style="font-weight:500; color:var(--color-primary-red);">Description: </span><br>${description}</li>
         </ul>
     </div>`;
@@ -116,6 +119,14 @@ export const makeEditShapeForm = ({shape,namespace}) => {
             type: "text",
             placeholder: "Type a Type",
             value: shape.type
+        })}
+        ${FormControlInput({
+            namespace,
+            name: "color",
+            displayname: "Color",
+            type: "text",
+            placeholder: "Type a Color",
+            value: shape.color
         })}
         ${FormControlTextarea({
             namespace,

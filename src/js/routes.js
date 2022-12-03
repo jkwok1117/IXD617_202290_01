@@ -140,6 +140,7 @@ export const ShapeAddPage = async() => {
         shape:{
             name:'',
             type:'',
+            color:'',
             description:'',
         },
         namespace:'shape-add'

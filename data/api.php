@@ -147,12 +147,14 @@ function makeStatement($data) {
                 `user_id`,
                 `name`,
                 `type`,
+                `color`,
                 `description`,
                 `img`,
                 `date_create`
             )
             VALUES
             (
+                ?,
                 ?,
                 ?,
                 ?,
@@ -227,6 +229,7 @@ function makeStatement($data) {
             SET
                 `name` = ?,
                 `type` = ?,
+                `color` = ?,
                 `description` = ?
             WHERE `id` = ?
             ",$params,false);

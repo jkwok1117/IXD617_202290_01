@@ -30,6 +30,7 @@ const getShapes = () => (new Array(50)).fill(0).map((o,i)=>{
     o.user_id = chance.natural({min:1, max:10});
     o.name = chance.first();
     o.type = chance.pickone(['square','circle','triangle']);
+    o.color = chance.pickone(['blue','red','yellow']);
     // o.category = shapetype(o.type);
     o.description = chance.sentence();
     o.img = `https://via.placeholder.com/${num()}x${num()}/${hex()}/fff/?text=${o.name}`;
