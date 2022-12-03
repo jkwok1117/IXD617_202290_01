@@ -23,18 +23,31 @@ export const makeUserProfilePage = ({name,email,username,img})=>`
         <div class="user-profile-body">
             <div class="profile-name">
                 <div class="user-profile-name">${name}</div>
-                <p>San Francisco, CA</p>
-                <div class="user-profile-username">@${username}</div>
-                <div class="user-profile-email">${email}</div>
+                <div class="user-info">
+                    <div class="user-profile-username">@${username}</div>
+                    <span style="margin:0 1em;">|</span>
+                    <div class="user-profile-email">${email}</div>
+                </div>
+            </div>
+            <div class="social">
+                <span class="social-icons"><i class="fa-brands fa-facebook-f"></i></span>
+                <span class="social-icons"><i class="fa-brands fa-twitter"></i></span>
+                <span class="social-icons"><i class="fa-brands fa-instagram"></i></span>
+                <span class="social-icons"><i class="fa-brands fa-tiktok"></i></span>
+            </div>
+            <div class="user-record">
+                <div class="user-tracked-shape">
+                    <p class="track-number">6</p>
+                    <p class="track-name">Shapes</p>
+                </div>
+                <div class="user-tracked-location">
+                    <p class="track-number">12</p>
+                    <p class="track-name">Locations</p>
+                </div>
             </div>
         </div>
 </div>
 `
-
-// export const makeShapeProfileDescription = ({name,type})=>`
-// <h2>${name}</h2>
-// <h2>${type}</h2>
-// `
 
 export const makeShapeDetailDescription = ({name,type,date_create,img,description}) => {
     return `

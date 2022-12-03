@@ -246,7 +246,17 @@ function makeStatement($data) {
 
             if (isset($result['error'])) return $result;
             return ["result"=>"Success"];
+        
 
+        case "update_shape_photo":
+            $result = makeQuery($conn,"UPDATE
+            `track_shapes`
+            SET `img` = ?
+            WHERE `id` = ?
+            ", $params, false);
+
+            if (isset($result['error'])) return $result;
+            return ["result"=>"Success"];
 
         
         /* DELETE */ 

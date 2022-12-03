@@ -116,11 +116,23 @@ export const UserEditPhotoPage = async() => {
     });
     let [user] = users;
 
+    $("#shape-edit-photo-page .photo-body").css({
+        "background-image":`url('${shape.img}')`
+    });
+}
+
+
+export const ShapeEditPhotoPage = async() => {
+    let {result:users} = await query({
+        type:"shape_by_id",
+        params:[sessionStorage.userId]
+    });
+    let [user] = users;
+
     $("#user-edit-photo-page .photo-body").css({
         "background-image":`url('${user.img}')`
     });
 }
-
 
 
 export const ShapeAddPage = async() => {

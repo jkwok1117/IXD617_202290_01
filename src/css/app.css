@@ -125,17 +125,6 @@ p {
     display: block;
 }
 
-/* WARNING */
-
-/* .warning {
-    background-color: var(--color-primary-red);
-    border-radius: 0.4em;
-    color: var(--color-neutral-light);
-    padding: 1em;
-    text-align: center;
-} */
-
-
 
 /* Basic layout tools */
 .display-flex { display:flex; }
@@ -706,10 +695,48 @@ select {
     text-align: center;
     font-size: 30px;
     font-weight: 500;
-    margin-top: 0.5em;
-    margin-bottom: 0.2em;
+    margin: 0.5em 0;
 }
-
+.user-info {
+    display: flex;
+    color: var(--color-neutral-medium);
+}
+.user-record {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2em auto;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 30%);
+    border-radius: 0.5em;
+    width: 85%;
+    height: 5em;
+    align-items: center;
+}
+.user-tracked-location,
+.user-tracked-shape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.track-number {
+    font-weight: 600;
+    font-size: 25px;
+    color: var(--color-secondary-purple);
+}
+.track-name {
+    font-size: 15px;
+    color: var(--color-neutral-dark);
+    font-weight: lighter;
+}
+.social {
+    margin: 1em auto 0 auto;
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+}
+.social-icons {
+    font-size: 24px;
+    color: #1b4a91;
+}
 /* USER PHOTO EDIT */
 
 .photo-body {

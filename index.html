@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/0007345bd9.js" crossorigin="anonymous"></script>
     
     <script src="lib/js/jquery-2.2.4.min.js"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
@@ -189,7 +190,7 @@
             </ul>
         </header>
         <div data-role="main">
-            <div class="shape-profile-top"></div>
+            <div class="shape-profile-top"><a href="#shape-edit-photo-page"></a></div>
             <!-- <div class="shape-profile-nav">
                 <div class="nav-link active">Map</div>
                 <div class="nav-link">Description</div>
@@ -472,6 +473,29 @@
             <p class="upload-text">Tap the image to upload new profile picture</p>
             <div class="form-control">
                 <h1 class="form-button"><a href="#" style="color: white;" class="js-submit-user-edit-photo-form">Submit</a></h1>
+            </div>
+        </form>
+    </section>
+
+
+    <!-- SHAPE EDIT PHOTO PAGE -->
+    <section data-role="page" id="shape-edit-photo-page">
+        <header data-role="header">
+            <h1>Edit Shape Photo</h1>
+            <ul class="shape-profile-head">
+                <li><a href="#" data-rel="back">&#60;</a></li>
+                <li class="flex-stretch"></li>
+                <li class="flex-stretch"></li>
+            </ul>
+        </header>
+        <form data-role="main" data-ajax="false" id="shape-edit-photo-form" class="padded display-flex flex-column full overscroll">
+            <input type="hidden" id="shape-edit-photo-image">
+            <label class="photo-body imagepicker replace">
+                <input type="file" id="shape-edit-photo-input" data-role="none" class="hidden">
+            </label>
+            <p class="upload-text">Tap the image to upload new shape picture</p>
+            <div class="form-control">
+                <h1 class="form-button"><a href="#" style="color: white;" class="js-submit-shape-edit-photo-form">Submit</a></h1>
             </div>
         </form>
     </section>
