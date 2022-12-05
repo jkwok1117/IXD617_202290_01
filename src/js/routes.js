@@ -65,6 +65,7 @@ export const ShapeProfilePage = async() => {
     let [shape] = shapes;
 
     $(".shape-profile-top").css({"background-image":`url(${shape.img})`})
+    $(".preview-img").css({"background-image":`url(${shape.img})`})
     $("#shape-profile-page h1").html(shape.name)
 
     let {result:locations} = await query({
@@ -116,24 +117,10 @@ export const UserEditPhotoPage = async() => {
     });
     let [user] = users;
 
-    $("#shape-edit-photo-page .photo-body").css({
-        "background-image":`url('${shape.img}')`
-    });
-}
-
-
-export const ShapeEditPhotoPage = async() => {
-    let {result:users} = await query({
-        type:"shape_by_id",
-        params:[sessionStorage.userId]
-    });
-    let [user] = users;
-
     $("#user-edit-photo-page .photo-body").css({
         "background-image":`url('${user.img}')`
     });
 }
-
 
 export const ShapeAddPage = async() => {
     $("#shape-add-page .body").html(makeEditShapeForm({

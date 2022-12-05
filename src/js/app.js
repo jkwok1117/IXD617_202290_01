@@ -1,6 +1,6 @@
-import { checkLocationAddForm, checkPasswordEditForm, checkShapeAddForm, checkShapeDeleteForm, checkShapeEditForm, checkShapeEditPhotoForm, checkSignupForm, checkUserEditForm, checkUserEditPhotoForm } from "./form.js";
+import { checkLocationAddForm, checkPasswordEditForm, checkShapeAddForm, checkShapeDeleteForm, checkShapeEditForm, checkSignupForm, checkUserEditForm, checkUserEditPhotoForm } from "./form.js";
 import { checkUpload, query } from "./functions.js";
-import { ShapeProfilePage, ListPage, MapPage, UserProfilePage, ChooseLocationPage, UserEditPage, ShapeEditPage, ShapeAddPage, ProfileAddPage, UserEditPhotoPage, ShapeEditPhotoPage } from "./routes.js";
+import { ShapeProfilePage, ListPage, MapPage, UserProfilePage, ChooseLocationPage, UserEditPage, ShapeEditPage, ShapeAddPage, ProfileAddPage, UserEditPhotoPage} from "./routes.js";
 import { checkSigninForm, checkUserId } from "./signin.js";
 
 // Document Ready
@@ -25,7 +25,6 @@ $(() => {
             case "shape-add-page": ShapeAddPage(); break;
             case "shape-edit-page": ShapeEditPage(); break;
             case "shape-add-new": ProfileAddPage(); break;
-            case "shape-edit-photo-page": ShapeEditPhotoPage(); break;
 
             case "choose-location-page": ChooseLocationPage(); break;
 
@@ -71,7 +70,7 @@ $(() => {
             $(this).parent().prev().val(filename);
             $(this).parent().css({
                 "background-image": `url('${filename}')`
-            })
+            }).addClass("picked");
         })
     })
 
@@ -100,9 +99,6 @@ $(() => {
     })
     .on("click", ".js-submit-user-edit-photo-form", function(e) {
         checkUserEditPhotoForm();
-    })
-    .on("click", ".js-submit-shape-edit-photo-form", function(e) {
-        checkShapeEditPhotoForm();
     })
 
     .on("click", ".nav-link", function(e) {

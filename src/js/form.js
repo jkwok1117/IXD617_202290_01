@@ -119,6 +119,7 @@ export const checkShapeAddForm = () => {
     let type = $("#shape-add-type").val();
     let color = $("#shape-add-color").val();
     let description = $("#shape-add-description").val();
+    let image = $("#shape-add-photo-image").val();
 
     query({
         type: 'insert_shape',
@@ -127,7 +128,8 @@ export const checkShapeAddForm = () => {
             name,
             type,
             color,
-            description
+            description,
+            image
         ]
     }).then((data)=>{
         if (data.error) {
@@ -143,6 +145,7 @@ export const checkShapeEditForm = () => {
     let type = $("#shape-edit-type").val();
     let color = $("#shape-edit-color").val();
     let description = $("#shape-edit-description").val();
+    let image = $("#shape-edit-photo-image").val();
 
     query({
         type: 'update_shape',
@@ -151,6 +154,7 @@ export const checkShapeEditForm = () => {
             type,
             color,
             description,
+            image,
             sessionStorage.shapeId
         ]
     }).then((data)=>{

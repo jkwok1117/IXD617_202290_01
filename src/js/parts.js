@@ -104,6 +104,12 @@ const FormControlTextarea = ({namespace,name,displayname,placeholder,value}) => 
 
 export const makeEditShapeForm = ({shape,namespace}) => {
     return `
+            <div class="form-control">
+                <input type="hidden" id="${namespace}-photo-image" value="${shape.img??""}">
+                <label class="imagepicker replace thumbnail ${shape.img?"picked":""}" style="background-image:url('${shape.img}')">
+                    <input type="file" id="${namespace}-photo-input" data-role="none" class="hidden">
+                </label>
+            </div>
         ${FormControlInput({
             namespace,
             name: "name",

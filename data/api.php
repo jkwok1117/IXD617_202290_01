@@ -159,7 +159,7 @@ function makeStatement($data) {
                 ?,
                 ?,
                 ?,
-                'https://via.placeholder.com/400/?text=SHAPE',
+                ?,
                 NOW()
             )
             ", $params, false);
@@ -230,7 +230,8 @@ function makeStatement($data) {
                 `name` = ?,
                 `type` = ?,
                 `color` = ?,
-                `description` = ?
+                `description` = ?,
+                `img` = ?
             WHERE `id` = ?
             ",$params,false);
 
