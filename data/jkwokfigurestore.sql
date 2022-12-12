@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 03, 2022 at 12:41 AM
+-- Generation Time: Dec 12, 2022 at 02:48 PM
 -- Server version: 5.7.39-cll-lve
 -- PHP Version: 7.4.30
 
@@ -308,7 +308,26 @@ INSERT INTO `track_locations` (`id`, `shape_id`, `lat`, `lng`, `description`, `p
 (261, 54, '37.742797', '-122.433674', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-11-28 17:27:20'),
 (262, 54, '37.740268', '-122.438481', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-11-28 17:30:48'),
 (263, 55, '37.755520', '-122.433588', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-11-28 17:33:49'),
-(264, 54, '37.767787', '-122.412045', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-02 21:05:24');
+(264, 54, '37.767787', '-122.412045', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-02 21:05:24'),
+(265, 51, '37.753811', '-122.428868', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-03 00:57:00'),
+(266, 56, '37.756046', '-122.453453', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-03 01:12:43'),
+(267, 57, '37.778283', '-122.448046', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-03 01:13:23'),
+(268, 58, '37.741864', '-122.480195', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 16:18:56'),
+(269, 59, '37.781746', '-122.453393', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 16:26:09'),
+(270, 59, '37.776301', '-122.464723', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 16:27:23'),
+(271, 60, '37.770042', '-122.470473', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 16:29:49'),
+(272, 60, '37.769414', '-122.463006', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 16:29:57'),
+(273, 61, '37.762527', '-122.461804', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 16:56:45'),
+(274, 61, '37.760365', '-122.465060', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 16:56:53'),
+(275, 62, '37.804359', '-122.401335', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 17:02:38'),
+(276, 62, '37.807325', '-122.446806', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 17:02:48'),
+(277, 63, '37.790184', '-122.432301', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 17:02:58'),
+(278, 63, '37.769272', '-122.429040', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 17:03:08'),
+(279, 64, '37.754410', '-122.421821', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 17:03:33'),
+(280, 64, '37.760907', '-122.438408', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-05 17:03:42'),
+(281, 14, '37.759373', '-122.421658', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-08 22:56:36'),
+(282, 65, '37.790309', '-122.418568', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-12 02:26:42'),
+(283, 12, '37.790852', '-122.426464', '', 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', '2022-12-12 13:06:39');
 
 -- --------------------------------------------------------
 
@@ -381,7 +400,15 @@ INSERT INTO `track_shapes` (`id`, `user_id`, `name`, `type`, `color`, `descripti
 (47, 1, 'Martin', 'triangle', 'yellow', 'Zi cuw odbo dudej remveh ocuraug gop kujlad zause pukoduz livi utosusni hipwov ep rekbagir.', 'https://via.placeholder.com/409x516/796/fff/?text=Martin', '2021-09-17 18:54:53'),
 (48, 6, 'Austin', 'circle', 'yellow', 'At bopav puvij hic odome cepdier ho wuh nopmiszep pacvec dor haroj foez imbo.', 'https://via.placeholder.com/362x409/9BB/fff/?text=Austin', '2020-09-25 05:26:18'),
 (49, 10, 'Dominic', 'square', 'blue', 'Mimam so lo dovuca agowurhal gi fujfumge pun was uga ib op tifu ub.', 'https://via.placeholder.com/593x355/868/fff/?text=Dominic', '2020-05-02 12:14:19'),
-(50, 1, 'Helen', 'square', 'yellow', 'Ni bisbe ma vuazikew egujupjip woageci piltun ojivijij ze lugeppin avegak gihebaho jor nicapwe libuv woatvu gi niztec.', 'https://via.placeholder.com/596x567/B96/fff/?text=Helen', '2020-10-30 12:58:15');
+(50, 1, 'Helen', 'square', 'yellow', 'Ni bisbe ma vuazikew egujupjip woageci piltun ojivijij ze lugeppin avegak gihebaho jor nicapwe libuv woatvu gi niztec.', 'https://via.placeholder.com/596x567/B96/fff/?text=Helen', '2020-10-30 12:58:15'),
+(56, 11, 'tim', 'circle', 'red', 'abcde', 'uploads/1670281543.7187_square-sign.png', '2022-12-03 01:11:56'),
+(58, 11, 'Window', 'Square', 'Blue', 'Blue square window', 'uploads/1670282308.4562_square-window.png', '2022-12-05 16:18:46'),
+(59, 13, 'Window', 'Square', 'White', 'White frame window on house', 'uploads/1670282872.0587_square-window.png', '2022-12-05 16:25:54'),
+(60, 13, 'Park Table', 'Square', 'Black', 'Outdoor chessboard table', 'uploads/1670282919.7317_square-table.png', '2022-12-05 16:29:40'),
+(61, 13, 'Stop sign', 'Hexagon', 'Red', 'Stop sign near the neighbourhood', 'uploads/1670285216.3748_stop_sign.png', '2022-12-05 16:56:32'),
+(62, 13, 'Lifebuoy', 'Circle', 'Orange', 'Lifebuoy near the pier', 'uploads/1670284631.8571_life-buoys.png', '2022-12-05 16:58:26'),
+(63, 13, 'Planter', 'Cylinder', 'Blue', 'Tall blue cylinder planter pot', 'uploads/1670284714.7354_planter.png', '2022-12-05 16:59:53'),
+(64, 13, 'Party Flag', 'Triangle', 'Red, Green, Yellow', 'Colorful triangle flag', 'uploads/1670284828.8208_flag.png', '2022-12-05 17:02:23');
 
 -- --------------------------------------------------------
 
@@ -415,7 +442,8 @@ INSERT INTO `track_users` (`id`, `name`, `username`, `email`, `password`, `img`,
 (9, 'Duane Dennis', 'user9', 'user9@gmail.com', '1a1dc91c907325c69271ddf0c944bc72', 'https://via.placeholder.com/380x538/67A/fff/?text=Duane Dennis', '2020-03-27 18:22:28'),
 (10, 'Birdie Hall', 'user10', 'user10@gmail.com', '1a1dc91c907325c69271ddf0c944bc72', 'https://via.placeholder.com/542x395/B48/fff/?text=Birdie Hall', '2022-01-18 16:38:39'),
 (11, 'Chris Palmer', 'user11', 'user11@gmail.com', '1a1dc91c907325c69271ddf0c944bc72', 'uploads/1669676506.1478_profile.png.jpg', '2022-11-25 19:37:31'),
-(12, '', 'asdf', 'abc@gmail.com', '964d72e72d053d501f2949969849b96c', 'https://via.placeholder.com/400/?text=USER', '2022-11-25 19:43:49');
+(12, '', 'asdf', 'abc@gmail.com', '964d72e72d053d501f2949969849b96c', 'https://via.placeholder.com/400/?text=USER', '2022-11-25 19:43:49'),
+(13, 'Chris Palmer', 'user0', 'user0@gmail.com', '1a1dc91c907325c69271ddf0c944bc72', 'uploads/1670277301.8819_profile.png.jpg', '2022-12-05 14:53:13');
 
 --
 -- Indexes for dumped tables
@@ -447,19 +475,19 @@ ALTER TABLE `track_users`
 -- AUTO_INCREMENT for table `track_locations`
 --
 ALTER TABLE `track_locations`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=265;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=284;
 
 --
 -- AUTO_INCREMENT for table `track_shapes`
 --
 ALTER TABLE `track_shapes`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `track_users`
 --
 ALTER TABLE `track_users`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
