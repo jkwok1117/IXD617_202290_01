@@ -121,9 +121,6 @@
     <section data-role="page" id="map-page">
         <div data-role="main">
             <div class="map"></div>
-            <!-- <div class="floater bottom right">
-                <a href="#shape-add-new" class="btn-circle"><img src="images/icons/add.svg" style="width: 25px; vertical-align: middle; padding-bottom: 4px;"></a>
-            </div> -->
         </div>
         <footer data-role="footer">
             <ul>
@@ -153,30 +150,6 @@
                 <li class="nav-icon" data-activateone=".nav-icon:nth-child(3)"><a href="#user-profile-page"><img src="images/icons/profile.svg"></a></li>
             </ul>
         </footer>
-
-        <!-- <div id="list-add-modal" class="modal">
-            <div class="modal-popup">
-                <div class="modal-head">
-                    <h1>Square Profile</h1>
-                    <ul>
-                        <li data-deactivate="#list-add-modal">&#60;</li>
-                        <li class="flex-stretch"></li>
-                    </ul>
-                </div>
-                <div class="modal-body">
-                    <div class="list-item" data-activate="#square-window-detail-modal"><img class="list-img" src="images/square-window.png"></div>
-                    <div class="list-item" data-activate="#square-sign-detail-modal"><img class="list-img" src="images/square-sign.png"></div>
-                    <div class="list-item" data-activate="#square-table-detail-modal"><img class="list-img" src="images/square-table.png"></div>
-                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
-                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
-                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
-                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
-                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
-                    <div class="list-item" data-activate="#square-detail-modal"><img class="list-img" src="images/square-window.png"></div>
-                </div>
-                <div class="modal-foot">Foot</div> -->
-            <!-- </div>
-        </div> -->
     </section>
 
     <!-- Shape PROFILE PAGE -->
@@ -191,10 +164,6 @@
         </header>
         <div data-role="main">
             <div class="shape-profile-top"></div>
-            <!-- <div class="shape-profile-nav">
-                <div class="nav-link active">Map</div>
-                <div class="nav-link">Description</div>
-            </div> -->
             <div class="shape-profile-bottom">
                 <div class="shape-profile-section section-map active">
                     <div class="map"></div>
@@ -273,22 +242,6 @@
         </div>
     </section>
 
-        <!-- ADD SHAPE INFO PAGE -->
-        <!-- <section data-role="page" id="choose-description-page">
-            <header data-role="header">
-                <h1>Description of Shape</h1>
-                <ul class="shape-profile-head">
-                    <li><a href="#" data-rel="back">&#60;</a></li>
-                    <li class="flex-stretch"></li>
-                </ul>
-            </header>
-            <div data-role="main">
-                <div class="padded">
-                    <textarea class="form-input" rows="10" id="location-description"></textarea>
-                    <h1 class="form-button"><a href="#" style="color: white;" class="js-submit-location-add-form">Save</a></h1>
-                </div>
-            </div>
-        </section> -->
 
     <!-- SHAPE ADD PAGE -->
 
@@ -426,7 +379,7 @@
         </header>
         <form data-role="main" data-ajax="false" id="user-edit-photo-form" class="padded display-flex flex-column full overscroll">
             <input type="hidden" id="user-edit-photo-image">
-            <label class="photo-body imagepicker replace">
+            <label class="photo-body imagepickers replace">
                 <input type="file" id="user-edit-photo-input" data-role="none" class="hidden">
             </label>
             <p class="upload-text">Tap the image to upload new profile picture</p>
@@ -435,78 +388,3 @@
             </div>
         </form>
     </section>
-    
-
-
-
-
-    <!-- SHAPE DETAIL PAGE -->
-
-    <!-- <div id="list-detail-modal" class="modal">
-        <div class="modal-back" data-deactivate="#list-detail-modal"></div>
-        <div class="modal-drawer bottom" style="height: 80%; border-radius: 10px 10px 0 0;">
-            <div class="modal-head">
-                <h1>Blue Window</h1>
-                <ul>
-                    <li data-deactivate="#list-detail-modal">&#60;</li>
-                    <li class="flex-stretch"></li>
-                    <li data-activate="#shape-edit-modal"><img src="images/icons/edit.svg" style="width: 20px;"></li>
-                </ul>
-            </div>
-            <div class="detail-body">
-                <img class="preview-img" src="images/square-window.png">
-                <div class="detail-info">
-                    <ul>
-                        <li><img class="list-icon" src="images/icons/date.svg">Oct 10, 2022</li><br>
-                        <li><img class="list-icon" src="images/icons/location.svg">9th Ave, San Francisco, CA</li><br>
-                        <li><span style="font-weight:500; color:var(--color-primary-red);">Description: </span><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</li>
-                    </ul>
-                    <div class="button">
-                        <input type="button" class="detail-button" value="View On Map">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
-    <!-- SHAPE EDIT PAGE -->
-
-    <!-- <div id="shape-edit-modal" class="modal">
-        <div class="modal-back" data-deactivate="#shape-edit-modal"></div>
-        <div class="list-modal-popup">
-            <div class="modal-head">
-                <h1>Edit Shape</h1>
-                <ul>
-                    <li data-deactivate="#shape-edit-modal">&#60;</li>
-                    <li class="flex-stretch"></li>
-                </ul>
-            </div>
-            <div class="detail-body">
-                <form class="form" id="edit-form">
-                    <br>
-                    <div class="form-control">
-                        <input class="form-edit-input" type="text" id="edit-title" data-role="none" placeholder="Edit Title">
-                    </div>
-                    <div class="form-control">
-                        <input class="form-edit-input" type="date" id="edit-date" data-role="none">
-                    </div>
-                    <div class="form-control">
-                        <input class="form-edit-input" type="text" id="edit-location" data-role="none" placeholder="Edit Location">
-                    </div>
-                    <div class="form-control">
-                        <input class="form-edit-input" type="text" id="edit-description" data-role="none" placeholder="Edit Description">
-                    </div>
-                    <div class="image-upload-box">
-                        <label for="file">Upload New Image</label>
-                    </div>
-                    <div class="form-control">
-                        <input type="button" class="edit-button" value="Save">
-                    </div>
-                    <div class="form-control" style="margin-bottom: 2em;" data-deactivate="#shape-edit-modal">
-                        <input type="button" class="edit-button" style=" background-color: var(--color-secondary-orange);" value="Cancel">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div> -->

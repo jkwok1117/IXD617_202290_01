@@ -35,16 +35,6 @@ export const makeUserProfilePage = ({name,email,username,img})=>`
                 <span class="social-icons"><i class="fa-brands fa-instagram"></i></span>
                 <span class="social-icons"><i class="fa-brands fa-tiktok"></i></span>
             </div>
-            <div class="user-record">
-                <div class="user-tracked-shape">
-                    <p class="track-number">6</p>
-                    <p class="track-name">Shapes</p>
-                </div>
-                <div class="user-tracked-location">
-                    <p class="track-number">12</p>
-                    <p class="track-name">Locations</p>
-                </div>
-            </div>
         </div>
 </div>
 `

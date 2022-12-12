@@ -874,6 +874,7 @@ select {
 .imagepicker input {
     display:none;
   }
+  .imagepickers,
   .imagepicker {
     cursor:pointer;
     color:white;
