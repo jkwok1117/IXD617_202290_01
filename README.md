@@ -7,6 +7,9 @@ IXD 617 Advanced Tech: Mobile Web
 - http://jkwok-design.com/aau/ixd617/
 - https://github.com/jkwok1117/IXD617_202290_01
 
+### Final Screenshot Links
+- https://github.com/jkwok1117/IXD617_202290_01/tree/main/screenshots/final
+
 ### Midterm Screenshot Links
 - https://github.com/jkwok1117/IXD617_202290_01/tree/main/screenshots/midterm
 
